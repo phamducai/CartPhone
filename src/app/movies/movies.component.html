@@ -1,0 +1,12 @@
+<div class="parent">
+  <ol class="movies">
+      <li class="movieListItem"
+          *ngFor="let item of movies"
+          [class.selected]="item === selectedMovie"
+        >
+  <a  routerLink="/detail/{{item.id}}">  {{item.name}} - {{item.releaseYear}}</a>
+      </li>
+  </ol>
+
+</div>
+<app-message></app-message>
