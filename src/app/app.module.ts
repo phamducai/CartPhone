@@ -4,11 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MoviesComponent } from './movies/movies.component';
 import { FormsModule } from '@angular/forms';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieService } from './movie.service';
-import { MessageComponent } from './message/message.component';
 import { MessageService } from './message.service';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -25,9 +22,6 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MoviesComponent,
-    MovieDetailComponent,
-    MessageComponent,
 
     DashboardComponent,
     LoginComponent,
@@ -39,7 +33,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     MyprofileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [MovieService, MessageService, PhoneService],
+  providers: [PhoneService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
