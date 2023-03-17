@@ -5,10 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { MovieService } from './movie.service';
-import { MessageService } from './message.service';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { PhonesComponent } from './phones/phones.component';
@@ -23,7 +20,6 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     AppComponent,
     HeaderComponent,
 
-    DashboardComponent,
     LoginComponent,
     TabsComponent,
     PhonesComponent,
