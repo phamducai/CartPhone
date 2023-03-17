@@ -10,7 +10,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieService } from './movie.service';
 import { MessageComponent } from './message/message.component';
 import { MessageService } from './message.service';
-import { TestComponent } from './test/test.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -21,8 +21,6 @@ import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +28,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     MoviesComponent,
     MovieDetailComponent,
     MessageComponent,
-    TestComponent,
+
     DashboardComponent,
     LoginComponent,
     TabsComponent,
@@ -39,14 +37,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     ShopComponent,
     CartComponent,
     MyprofileComponent,
-
-
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,FormsModule
-  ],
-  providers: [MovieService,MessageService,PhoneService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [MovieService, MessageService, PhoneService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

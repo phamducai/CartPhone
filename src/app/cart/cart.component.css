@@ -78,3 +78,61 @@
 
   color: #000000;
 }
+
+.imgcart {
+  width: 188px;
+  height: 239px;
+  margin-left: 67px;
+  margin-top: 33px;
+}
+.phonenamecart {
+  margin-top: 28px;
+  width: 497px;
+  height: 48px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  align-items: center;
+  color: #000000;
+}
+.descriptioncart {
+  width: 760px;
+  height: 155px;
+  left: 0px;
+  margin-top: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+
+  align-items: center;
+
+  color: #000000;
+}
+.pricecart {
+  width: 760px;
+  height: 61px;
+  margin-left: 0px;
+  margin-top: -3px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  align-items: center;
+
+  color: #000000;
+}
+.contentcart {
+  margin-left: 97px;
+  margin-right: 76px;
+}
+.hrbot {
+  width: 1404px;
+  height: 0px;
+  margin-left: 48px;
+  margin-top: 30px;
+
+  border: 1px solid #adadad;
+}

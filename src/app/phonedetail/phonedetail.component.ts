@@ -1,13 +1,7 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  Injectable,
-  OnInit,
-} from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhoneService } from '../phone.service';
-import { Phone, cartphone } from 'src/models/phone';
+import { Phone } from 'src/models/phone';
 import * as _ from 'lodash';
 import { CartphoneService } from '../cartphone.service';
 
@@ -16,28 +10,31 @@ import { CartphoneService } from '../cartphone.service';
   templateUrl: './phonedetail.component.html',
   styleUrls: ['./phonedetail.component.css'],
 })
-@Injectable({
-  providedIn: 'root',
-})
 export class PhonedetailComponent implements OnInit {
+  rate = 0;
+  sum = 0;
+  phone: Phone | undefined;
+
   constructor(
     private route: ActivatedRoute,
     private phoneService: PhoneService,
-    public location: Location,
-    private cdRef: ChangeDetectorRef,
     public cartphoneService: CartphoneService
   ) {}
-  rate: number = 0;
-  sum: number = this.cartphoneService.numberofphone;
-  phone: Phone | undefined;
-  updateDetectChange(): void {
-    this.cdRef.detectChanges();
-  }
-  onClick(phone: Phone | any) {
-    let id = Number(this.route.snapshot.paramMap.get('id'));
 
-    let item = _.find(this.cartphoneService.cartphone, { id: id });
-    console.log(item);
+  ngOnInit(): void {
+    this.getPhoneFromRoute();
+    this.sum = _.reduce(
+      this.cartphoneService.cartphone,
+      (accumulator, currentValue) => {
+        return accumulator + currentValue.quantity;
+      },
+      0
+    );
+  }
+
+  onClick(phone: Phone | any): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    let item = _.find(this.cartphoneService.cartphone, { id });
     if (!item) {
       this.cartphoneService.cartphone.push({ ...phone, quantity: 1 });
     } else {
@@ -51,26 +48,14 @@ export class PhonedetailComponent implements OnInit {
       0
     );
   }
-  ngOnInit(): void {
-    this.getPhoneFromRoute();
-    this.rate = this.phone?.rate ? this.phone?.rate : 0;
-    this.sum = _.reduce(
-      this.cartphoneService.cartphone,
-      (accumulator, currentValue) => {
-        return accumulator + currentValue.quantity;
-      },
-      0
-    );
-  }
   goBack(): void {
-    this.location.back();
+    history.back();
   }
   getPhoneFromRoute(): void {
-    let id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.phoneService.getPhoneById(id).subscribe((item) => {
-      this.rate = item?.rate ? item?.rate : 0;
-      this.updateDetectChange();
-      return (this.phone = item);
+      this.phone = item || ({} as Phone);
+      this.rate = item?.rate || 0;
     });
   }
 }
