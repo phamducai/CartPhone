@@ -14,6 +14,7 @@ import { PhonedetailComponent } from './phonedetail/phonedetail.component';
 import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     MyprofileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [PhoneService],
+  providers: [PhoneService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
