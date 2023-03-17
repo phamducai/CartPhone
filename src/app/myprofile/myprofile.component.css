@@ -1,0 +1,18 @@
+.textheader {
+  position: absolute;
+  width: 405px;
+  height: 60px;
+  left: 21px;
+  top: 3px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
