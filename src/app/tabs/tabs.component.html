@@ -2,37 +2,55 @@
   <div class="w-1/6 border-r border-gray-200 textmenu">
     <!-- Left column - list of tabs -->
     <ul>
-   <div class='flex items-center justify-between w-11/12 mx-auto' >  Menu  <i class="material-icons">menu</i></div>
-      <li (click)="selectTab(1)" [ngClass]="{'border-l border-t border-r textactive bg-red-600 ': currentTab === 1}" class="px-3 py-2 hover:bg-blue-50 cursor-pointer"><span class="material-symbols-outlined">
-
-        </span>  <div class="flex items-center"><i class="material-icons">store</i>Shop</div></li>
-      <li (click)="selectTab(2)" [ngClass]="{'border-b border-l border-r textactive bg-red-600': currentTab === 2, 'px-3 py-2 hover:bg-blue-50 cursor-pointer': true}" >  <div class="flex items-center"><i class="material-icons">local_grocery_store</i>Cart</div></li>
-      <li (click)="selectTab(3)" [ngClass]="{'border-b border-l border-r textactive bg-red-600': currentTab === 3, 'px-3 py-2 hover:bg-blue-50 cursor-pointer': true}" ><div class="flex items-center "><i class="material-icons ">person</i>My Profile</div></li>
+      <div class="flex items-center justify-between w-11/12 mx-auto">
+        Menu <i class="material-icons">menu</i>
+      </div>
+      <a routerLink="/shop"
+        ><li
+          (click)="selectTab(1)"
+          [ngClass]="{
+            'border-l border-t border-r textactive bg-red-600 ':
+              currentTab === 1
+          }"
+          class="px-3 py-2 hover:bg-blue-50 cursor-pointer"
+        >
+          <span class="material-symbols-outlined"> </span>
+          <div class="flex items-center">
+            <i class="material-icons">store</i>Shop
+          </div>
+        </li></a
+      >
+      <a routerLink="/cart">
+        <li
+          (click)="selectTab(2)"
+          [ngClass]="{
+            'border-b border-l border-r textactive bg-red-600':
+              currentTab === 2,
+            'px-3 py-2 hover:bg-blue-50 cursor-pointer': true
+          }"
+        >
+          <div class="flex items-center">
+            <i class="material-icons">local_grocery_store</i>Cart
+          </div>
+        </li>
+      </a>
+      <a routerLink="/profile"
+        ><li
+          (click)="selectTab(3)"
+          [ngClass]="{
+            'border-b border-l border-r textactive bg-red-600':
+              currentTab === 3,
+            'px-3 py-2 hover:bg-blue-50 cursor-pointer': true
+          }"
+        >
+          <div class="flex items-center">
+            <i class="material-icons">person</i>My Profile
+          </div>
+        </li></a
+      >
     </ul>
   </div>
-
-  <div class="flex-1 px-4 py-2 relative" >
-    <!-- Right column - content area -->
-    <div *ngIf="currentTab === 1">
-      <div class="textheader">Shop</div>
-      <div >
-       <span class="textHeader"> Shop</span>
-
-      </div>
-      <input type="text" class="inputtext" placeholder="Search...">
-      <!-- <div class="textplacehoder">Search...</div> -->
-      <img src="https://www.clarin.eu/sites/default/files/styles/medium/public/icon-services-fcs.png?itok=seug9Hqn" class='iconsearch'alt="">
-     <img src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png" class="imgfilter" alt="">
-     <hr class="hrfix">
-   <div class="mt-32"> <app-phones></app-phones></div>
-    </div>
-    <div *ngIf="currentTab === 2">
-      <h2>Tab 2 content</h2>
-      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div *ngIf="currentTab === 3">
-      <h2>Tab 3 content</h2>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+  <div class="flex-1 px-4 py-2 relative">
+    <router-outlet></router-outlet>
   </div>
 </div>
