@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { Phone } from 'src/models/phone';
-import { fakePhones } from './fake-phonedata';
+
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
@@ -13,12 +13,7 @@ export class PhoneService {
 
   private apiUrl = 'http://localhost:3002/api/phones';
 
-  getPhoneById(id: string | null): Observable<Phone | undefined> {
-    const idNumber = Number(id);
-    return of(fakePhones.find((item) => item.id === idNumber));
-  }
-
-  getPhone(): Observable<Phone[]> {
+  getPhones(): Observable<Phone[]> {
     return this.http.get<Phone[]>(this.apiUrl).pipe(
       tap((receivedMovies: any) => {
         return receivedMovies.content;
@@ -31,7 +26,7 @@ export class PhoneService {
       tap((receivedMovie: any) => {
         return receivedMovie.content;
       }),
-      catchError(() => of([]))
+      catchError((error) => of([]))
     );
   }
 }

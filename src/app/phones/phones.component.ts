@@ -21,7 +21,7 @@ export class PhonesComponent implements OnInit {
   //     .subscribe((updatedMovies) => (this.phones = updatedMovies));
   // }
   getMPhonesFromServices(): void {
-    this.phoneService.getPhone().subscribe((data: any) => {
+    this.phoneService.getPhones().subscribe((data: any) => {
       this.phones = data.content;
     });
   }
