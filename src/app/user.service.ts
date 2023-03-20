@@ -8,7 +8,6 @@ import { fakeUser } from './fake-userdata';
 })
 export class UserService {
   constructor() {}
-
   getuser(): Observable<User> {
     return of(fakeUser);
   }
