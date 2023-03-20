@@ -22,6 +22,7 @@ export class PhonedetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.phone);
     this.getPhoneFromRoute();
     this.sum = _.reduce(
       this.cartphoneService.cartphone,
@@ -53,9 +54,9 @@ export class PhonedetailComponent implements OnInit {
   }
   getPhoneFromRoute(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.phoneService.getPhoneById(id).subscribe((item) => {
-      this.phone = item || ({} as Phone);
-      this.rate = item?.rate || 0;
+    this.phoneService.getPhonebyId(id).subscribe((item) => {
+      this.phone = item.content || ({} as Phone);
+      this.rate = item?.content.rate || 0;
     });
   }
 }

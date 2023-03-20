@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { PhoneService } from '../phone.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,14 +8,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./tabs.component.css'],
 })
 export class TabsComponent implements OnInit {
-  constructor(public location: Location) {}
-  currentPath = this.location.path();
-
+  constructor(private dataService: PhoneService) {}
   currentTab = 1;
   selectTab(index: number): void {
     this.currentTab = index;
   }
-  ngOnInit(): void {
-    console.log(this.currentPath);
-  }
+  message: any;
+  ngOnInit(): void {}
 }

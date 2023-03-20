@@ -7,6 +7,7 @@ import { PhonedetailComponent } from './phonedetail/phonedetail.component';
 import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'shop', pathMatch: 'full' },
   { path: 'shop/:id', component: PhonedetailComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'cart', component: CartComponent },

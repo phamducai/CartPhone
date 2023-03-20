@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-
 import { LoginComponent } from './login/login.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { PhonesComponent } from './phones/phones.component';
@@ -15,12 +13,11 @@ import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { UserService } from './user.service';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-
     LoginComponent,
     TabsComponent,
     PhonesComponent,
@@ -29,7 +26,7 @@ import { UserService } from './user.service';
     CartComponent,
     MyprofileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [PhoneService, UserService],
   bootstrap: [AppComponent],
 })

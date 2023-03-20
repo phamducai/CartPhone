@@ -4,11 +4,7 @@
 <div class="mt-32">
   <div *ngFor="let item of cartphoneService.cartphone">
     <div class="flex items-center justify-items-center">
-      <img
-        src="https://cdn.tgdd.vn/Products/Images/42/216174/Slider/vi-vn-samsung-galaxy-a31-tinhnang.jpg"
-        alt=""
-        class="imgcart"
-      />
+      <img src="{{ item.image }}" alt="" class="imgcart" />
       <div class="contentcart">
         <h1 class="phonenamecart">{{ item.name }}</h1>
         <p class="descriptioncart">{{ item.description }}</p>
