@@ -25,7 +25,9 @@
 
     <div class="ml-20">
       <h1 class="h1text"><input type="text" [value]="user?.name" /></h1>
-      <p class="textemail"><input [value]="user?.email" type="text" /></p>
+      <p class="textemail">
+        <input [value]="user?.email" type="text" class="customs" />
+      </p>
     </div>
   </div>
   <div class="flex margincontent">
@@ -37,7 +39,7 @@
     </div>
     <div class="ml-7">
       <div class="mb-2">
-        <input type="date" [value]="user?.dateOfBirth" />
+        <input type="date" [value]="formatdata" />
       </div>
       <div class="mb-2">
         <select name="sex" [(ngModel)]="selectedSex">

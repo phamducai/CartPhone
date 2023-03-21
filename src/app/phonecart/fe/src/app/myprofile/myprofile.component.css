@@ -1,0 +1,50 @@
+.textheader {
+  position: absolute;
+  width: 405px;
+  height: 60px;
+  left: 21px;
+  top: 3px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.imageuser {
+  width: 186px;
+  height: 190px;
+  margin-left: 107px;
+  border-radius: 10px;
+}
+.h1text {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 15px;
+}
+.textemail {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+  margin-top: 15px;
+}
+.margincontent {
+  margin-left: 72px;
+  margin-top: 68px;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+.address {
+  width: 1100px;
+}

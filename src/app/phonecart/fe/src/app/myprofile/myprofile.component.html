@@ -1,0 +1,57 @@
+<div class="textheader">My Profile</div>
+<div class="container">
+  <div class="mt-52 flex items-center">
+    <!-- <img src="{{ user?.avatar }}" alt="" class="imageuser" /> -->
+
+    <img
+      *ngIf="!imageUrl"
+      src="placeholder.png"
+      alt="Upload image"
+      (click)="openFileSelector()"
+    />
+    <img
+      *ngIf="imageUrl"
+      [src]="imageUrl"
+      alt="Uploaded image"
+      (click)="openFileSelector()"
+      class="imageuser"
+    />
+    <input
+      type="file"
+      id="file-input"
+      (change)="onFileSelected($event)"
+      hidden
+    />
+
+    <div class="ml-20">
+      <h1 class="h1text"><input type="text" [value]="user?.name" /></h1>
+      <p class="textemail"><input [value]="user?.email" type="text" /></p>
+    </div>
+  </div>
+  <div class="flex margincontent">
+    <div>
+      <p class="mb-2">Date of Birth:</p>
+      <p class="mb-2">Sex:</p>
+      <p class="mb-2">Address Company:</p>
+      <p class="mb-2">Address Home:</p>
+    </div>
+    <div class="ml-7">
+      <div class="mb-2">
+        <input type="date" [value]="user?.dateOfBirth" />
+      </div>
+      <div class="mb-2">
+        <select name="sex" [(ngModel)]="selectedSex">
+          <option value="Male">Male</option>
+          <option value="FeMail">FeMail</option>
+          <option value="Orther">Orther</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <input type="text" [value]="user?.compantAddress" class="address" />
+      </div>
+      <div class="mb-2">
+        <input type="text" [value]="user?.companthome" class="address" />
+      </div>
+    </div>
+  </div>
+</div>

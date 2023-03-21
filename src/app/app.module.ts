@@ -9,13 +9,11 @@ import { TabsComponent } from './tabs/tabs.component';
 import { PhonesComponent } from './phones/phones.component';
 import { PhoneService } from './phone.service';
 import { PhonedetailComponent } from './phonedetail/phonedetail.component';
-import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
-import { TestComponent } from './test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -25,11 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     TabsComponent,
     PhonesComponent,
     PhonedetailComponent,
-    ShopComponent,
+
     CartComponent,
     MyprofileComponent,
     RegisterComponent,
-    TestComponent,
   ],
   imports: [
     BrowserModule,

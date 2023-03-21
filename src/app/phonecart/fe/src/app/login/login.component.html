@@ -1,0 +1,82 @@
+<div class="backgroundlogin relative">
+  <div class="container mx-auto pt-24">
+    <div class="flex justify-center">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEt1p1OKnAYP6899nVmSOyOxEdLUbZwkCzMzOuV2ZxJA&s"
+        alt=""
+        class="imagelogo rounded-full"
+      />
+    </div>
+
+    <form [formGroup]="loginForm" class="" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <input
+          type="email"
+          formControlName="email"
+          class="inputname"
+          placeholder=""
+        />
+        <div
+          *ngIf="
+            loginForm.get('email').invalid && loginForm.get('email').touched
+          "
+          class="text-red-500 text-sm mt-1"
+        >
+          Please enter a valid email address.
+        </div>
+        <div class="iconuser rounded-full flex justify-center">
+          <i class="material-icons">person</i>
+        </div>
+      </div>
+      <div class="mb-6">
+        <div class="">
+          <input
+            type="{{ passwordHidden ? 'password' : 'text' }}"
+            formControlName="password"
+            class="inputpassword"
+          />
+
+          <span
+            (click)="togglePasswordVisibility()"
+            class="absolute right-0 top-0 mt-3 mr-4 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                *ngIf="passwordHidden"
+                d="M3 10a7 7 0 1114 0 7 7 0 01-14 0zm9-7a2 2 0 00-1.8 1.12.5.5 0 01-.9-.44A3 3 0 0112 8a3 3 0 11-6 0c0-.41.08-.8.22-1.16a.5.5 0 11.9.44A2 2 0 007 3h5zM5.5 7.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+              />
+              <path
+                *ngIf="!passwordHidden"
+                d="M10 12a2 2 0 100-4 2 2 0 000 4zM4.22 8.28a4 4 0 015.66 0 .5.5 0 00.71-.71 5 5 0 00-7.07 0 .5.5 0 00.7.7zM15.78 8.28a5 5 0 00-7.07 0 .5.5 0 10.7.7 4 4 0 015.66 0 .5.5 0 00.71-.71z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('password').invalid &&
+            loginForm.get('password').touched
+          "
+          class="text-red-500 text-sm mt-1"
+        >
+          Please enter a password with at least 6 characters.
+        </div>
+      </div>
+      <div>
+        <button
+          [disabled]="!loginForm.valid"
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition-colors duration-300"
+          [ngStyle]="{ opacity: loginForm.valid ? 1 : 0.5 }"
+        >
+          Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

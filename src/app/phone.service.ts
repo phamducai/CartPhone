@@ -5,6 +5,7 @@ import { Phone } from 'src/models/phone';
 
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
@@ -26,7 +27,17 @@ export class PhoneService {
       tap((receivedMovie: any) => {
         return receivedMovie.content;
       }),
-      catchError((error) => of([]))
+      catchError((error) => of([null, error]))
     );
+  }
+
+  SearchPhonebyName(name: string): Observable<any> {
+    if (!name.trim()) {
+      return of([]);
+    }
+
+    return this.http
+      .get<Phone[]>(this.apiUrl + `/find/${name}`)
+      .pipe(debounceTime(300));
   }
 }

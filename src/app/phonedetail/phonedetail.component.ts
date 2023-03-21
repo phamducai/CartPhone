@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhoneService } from '../phone.service';
 import { Phone } from 'src/models/phone';
@@ -11,7 +11,7 @@ import { TabsComponent } from '../tabs/tabs.component';
   templateUrl: './phonedetail.component.html',
   styleUrls: ['./phonedetail.component.css'],
 })
-export class PhonedetailComponent implements OnInit {
+export class PhonedetailComponent implements OnInit, OnDestroy {
   rate = 0;
   sum = 0;
   phone: Phone | undefined;
@@ -22,7 +22,9 @@ export class PhonedetailComponent implements OnInit {
     public cartphoneService: CartphoneService,
     public tabsComponent: TabsComponent
   ) {}
-
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy');
+  }
   ngOnInit(): void {
     console.log(this.phone);
     this.getPhoneFromRoute();

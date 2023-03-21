@@ -1,0 +1,80 @@
+<div class="textheader">Cart</div>
+<div class="numbertextbag">{{ sum }} items in bags</div>
+<hr class="hrfix" />
+<div class="mt-32">
+  <div *ngFor="let item of cartphoneService.cartphone">
+    <div class="flex items-center justify-items-center">
+      <img src="{{ item.image }}" alt="" class="imgcart" />
+      <div class="contentcart">
+        <h1 class="phonenamecart">{{ item.name }}</h1>
+        <p class="descriptioncart">{{ item.description }}</p>
+        <p class="pricecart">
+          <span class="mr-2">{{
+            item.price.toString().slice(-9, item.price.toString().length - 6)
+          }}</span>
+          <span class="mr-2">{{
+            item.price.toString().slice(-6, item.price.toString().length - 3)
+          }}</span>
+          <span class="mr-2">{{
+            item.price.toString().slice(-3, item.price.toString().length)
+          }}</span>
+          VND
+        </p>
+      </div>
+      <div class="grid grid-cols-3 gap-x-4">
+        <button (click)="onClicks(item.id, 1)">+</button> {{ item?.quantity }}
+        <button (click)="onClicks(item.id, -1)">-</button>
+      </div>
+    </div>
+    <hr class="hrbot" />
+  </div>
+  <div class="flex flex-row mt-3 justify-end mr-28">
+    <div class="flex flex-col items-end mr-5">
+      <p>SubToTal</p>
+      <p>Tax</p>
+      <p>Total</p>
+    </div>
+    <div class="flex flex-col items-end">
+      <p>
+        {{
+          payment
+            .toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+              useGrouping: true
+            })
+            .replace(".", " ")
+        }}
+      </p>
+      <p>
+        {{
+          (payment * 0.1)
+            .toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+              useGrouping: true
+            })
+            .replace(".", " ")
+        }}
+      </p>
+
+      <p>
+        {{
+          (payment * 1.1)
+            .toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+              useGrouping: true
+            })
+            .replace(".", " ")
+        }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +12,11 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   passwordHidden: boolean = true;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -24,7 +31,18 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      // handle form submission here
+      this.userService
+        .login(this.loginForm.value.email, this.loginForm.value.password)
+        .subscribe((response) => {
+          if (response) {
+            this.router.navigate(['']);
+            localStorage.setItem(
+              'tokencartphone',
+              JSON.stringify(response.content)
+            );
+            console.log(response);
+          }
+        });
     }
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/models/user';
+import { AppComponent } from '../app.component';
 import { UserService } from '../user.service';
+import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-myprofile',
@@ -12,21 +14,20 @@ export class MyprofileComponent implements OnInit {
   //default form
   imageUrl: string | undefined;
   selectedSex: string = '';
-  company: string = '15,Duy Tan,Dich Vong Hau,Cau Giay,Ha Noi';
-  home: string = '15,Duy Tan,Dich Vong Hau,Cau Giay,Ha Noi';
+  formatdata: string = '';
 
   ngOnInit(): void {
-    this.getuser();
+    this.user = this.appComponent.user;
+    console.log(this.user);
+    this.formatdata = dayjs(this.user?.dateOfBirth).format('YYYY-MM-DD');
     this.selectedSex = this.user?.sex;
     this.imageUrl = this.user?.avatar;
-    console.log(this.user);
-  }
-  getuser() {
-    this.userService.getuser().subscribe((item) => (this.user = item));
   }
 
-  constructor(private userService: UserService) {}
-  //upload
+  constructor(
+    private userService: UserService,
+    private appComponent: AppComponent
+  ) {}
 
   onFileSelected(event: any): void {
     const file = event.target.files[0];
@@ -40,7 +41,6 @@ export class MyprofileComponent implements OnInit {
       };
     }
   }
-
   openFileSelector(): void {
     const input = document.getElementById('file-input');
     if (input) {

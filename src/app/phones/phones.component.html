@@ -1,3 +1,28 @@
+<div class="textheader">Shop</div>
+<div>
+  <span class="textHeader"> Shop</span>
+</div>
+<input
+  type="text"
+  class="inputtext"
+  placeholder="Search..."
+  #searchBox
+  (input)="searchPhonesByName(searchBox.value)"
+/>
+<!-- <div class="textplacehoder">Search...</div> -->
+<img
+  src="https://www.clarin.eu/sites/default/files/styles/medium/public/icon-services-fcs.png?itok=seug9Hqn"
+  class="iconsearch"
+  alt=""
+/>
+<img
+  src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png"
+  class="imgfilter"
+  alt=""
+/>
+<hr class="hrfix" />
+<div class="mt-32"></div>
+
 <div class="grid grid-cols-2 justify-start gap-4">
   <div *ngFor="let item of phones">
     <a routerLink="/shop/{{ item.id }}"
