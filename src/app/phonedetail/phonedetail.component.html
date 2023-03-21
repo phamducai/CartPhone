@@ -1,55 +1,109 @@
-<div class="textheader">Shop</div>
-<div>
-  <span class="textHeader"> Shop / Product</span>
-</div>
-<div class="carthead">
-  <i class="material-icons text-4xl">local_grocery_store</i>
-</div>
-<div class="numberspan">{{ sum }}</div>
-<hr class="hrfix" />
-<div class="mt-32"></div>
+<app-header> </app-header>
 <div class="flex">
-  <div class="parentimage">
-    <img src="{{ phone?.image }}" alt="phone" class="imgphonedetail" />
+  <div class="w-1/6 border-r border-gray-200 textmenu">
+    <!-- Left column - list of tabs -->
+    <ul>
+      <div class="flex items-center justify-between w-11/12 mx-auto">
+        Menu <i class="material-icons">menu</i>
+      </div>
+
+      <li
+        (click)="selectTab(1)"
+        [ngClass]="{
+          'border-l border-t border-r textactive bg-red-600 ': currentTab === 1
+        }"
+        class="px-3 py-2 hover:bg-blue-50 cursor-pointer"
+      >
+        <span class="material-symbols-outlined"> </span>
+        <div class="flex items-center">
+          <i class="material-icons">store</i>Shop
+        </div>
+      </li>
+
+      <li
+        (click)="selectTab(2)"
+        [ngClass]="{
+          'border-b border-l border-r textactive bg-red-600': currentTab === 2,
+          'px-3 py-2 hover:bg-blue-50 cursor-pointer': true
+        }"
+      >
+        <div class="flex items-center">
+          <i class="material-icons">local_grocery_store</i>Cart
+        </div>
+      </li>
+
+      <li
+        (click)="selectTab(3)"
+        [ngClass]="{
+          'border-b border-l border-r textactive bg-red-600': currentTab === 3,
+          'px-3 py-2 hover:bg-blue-50 cursor-pointer': true
+        }"
+      >
+        <div class="flex items-center">
+          <i class="material-icons">person</i>My Profile
+        </div>
+      </li>
+    </ul>
   </div>
-  <div class="content">
-    <h3 class="heardertext">{{ phone?.name }}</h3>
-    <p class="contentdescription">{{ phone?.description }}</p>
-    <p class="pricevnds">
-      {{
-        phone?.price?.toLocaleString("vi-VN", {
-          style: "currency",
-          currency: "VND",
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0,
-          useGrouping: true
-        })
-      }}
-    </p>
-    <p></p>
-    <div class="flex">
-      <!-- Use phone?.rate here -->
-      <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-        <svg
-          class="h-12 w-12 fill-current"
-          [ngClass]="{
-            'text-gray-400': true,
-            'text-yellow-300': star > 0 && star < rate
-          }"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-        >
-          <path
-            d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
-          />
-        </svg>
-      </ng-container>
-    </div>
-    <div class="flex mt-3">
-      <button class="buttonleft" (click)="onClick(phone)">Mua ngay</button>
-      <button class="buttonright" (click)="onClick(phone)">
-        Thêm vào giỏ hàng
-      </button>
-    </div>
+  <div class="flex-1 px-4 py-2 relative">
+    <ng-container *ngIf="currentTab === 1">
+      <div class="textheader">Shop</div>
+      <div>
+        <span class="textHeader"> Shop / Product</span>
+      </div>
+      <div class="carthead">
+        <i class="material-icons text-4xl">local_grocery_store</i>
+      </div>
+      <div class="numberspan">{{ sum }}</div>
+      <hr class="hrfix" />
+      <div class="mt-32"></div>
+      <div class="flex">
+        <div class="parentimage">
+          <img src="{{ phone?.image }}" alt="phone" class="imgphonedetail" />
+        </div>
+        <div class="content">
+          <h3 class="heardertext">{{ phone?.name }}</h3>
+          <p class="contentdescription">{{ phone?.description }}</p>
+          <p class="pricevnds">
+            {{
+              phone?.price?.toLocaleString("vi-VN", {
+                style: "currency",
+                currency: "VND",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+                useGrouping: true
+              })
+            }}
+          </p>
+          <p></p>
+          <div class="flex">
+            <!-- Use phone?.rate here -->
+            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+              <svg
+                class="h-12 w-12 fill-current"
+                [ngClass]="{
+                  'text-gray-400': true,
+                  'text-yellow-300': star > 0 && star < rate
+                }"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
+                />
+              </svg>
+            </ng-container>
+          </div>
+          <div class="flex mt-3">
+            <button class="buttonleft" (click)="onClick(phone)">
+              Mua ngay
+            </button>
+            <button class="buttonright" (click)="onClick(phone)">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>

@@ -14,6 +14,9 @@ import { CartComponent } from './cart/cart.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
+import { TestComponent } from './test/test.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +28,16 @@ import { HttpClientModule } from '@angular/common/http';
     ShopComponent,
     CartComponent,
     MyprofileComponent,
+    RegisterComponent,
+    TestComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [PhoneService, UserService],
   bootstrap: [AppComponent],
 })

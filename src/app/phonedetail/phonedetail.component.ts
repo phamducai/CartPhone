@@ -4,6 +4,7 @@ import { PhoneService } from '../phone.service';
 import { Phone } from 'src/models/phone';
 import * as _ from 'lodash';
 import { CartphoneService } from '../cartphone.service';
+import { TabsComponent } from '../tabs/tabs.component';
 
 @Component({
   selector: 'app-phonedetail',
@@ -18,7 +19,8 @@ export class PhonedetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private phoneService: PhoneService,
-    public cartphoneService: CartphoneService
+    public cartphoneService: CartphoneService,
+    public tabsComponent: TabsComponent
   ) {}
 
   ngOnInit(): void {
@@ -58,5 +60,12 @@ export class PhonedetailComponent implements OnInit {
       this.phone = item.content || ({} as Phone);
       this.rate = item?.content.rate || 0;
     });
+  }
+
+  currentTab = 1;
+  async selectTab(index: number): Promise<void> {
+    this.currentTab = index;
+    await this.goBack();
+    this.tabsComponent.selectTab(index);
   }
 }

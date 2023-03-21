@@ -82,3 +82,12 @@
   left: -1px;
   top: 124px;
 }
+.inputtext::placeholder {
+  position: absolute;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 16px;
+  color: #000000;
+  margin-left: 24px;
+  margin-top: 10px;
+}

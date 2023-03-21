@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Phone } from 'src/models/phone';
 import { PhoneService } from '../phone.service';
 
