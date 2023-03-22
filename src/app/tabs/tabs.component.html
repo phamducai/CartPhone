@@ -1,61 +1,62 @@
 <app-header> </app-header>
-<div class="flex">
-  <div class="w-1/6 border-r border-gray-200 textmenu">
-    <!-- Left column - list of tabs -->
-    <ul>
-      <div class="flex items-center justify-between w-11/12 mx-auto">
-        Menu <i class="material-icons">menu</i>
-      </div>
-
-      <li
-        (click)="selectTab(1)"
-        [ngClass]="{
-          'border-l border-t border-r textactive bg-red-600 ': currentTab === 1
-        }"
-        class="px-3 py-2 hover:bg-blue-50 cursor-pointer"
+<div class="relative content">
+  <div class="tab">
+    <div class="menu">
+      <span class="menu__text">Menu</span>
+      <span class="menu__icon">
+        <hr class="menu__icon--line1" />
+        <hr class="menu__icon--line2" />
+        <hr class="menu__icon--line3" />
+      </span>
+    </div>
+    <div
+      (click)="selectTab(1)"
+      class="shop"
+      [ngClass]="{
+        active: currentTab === 1
+      }"
+    >
+      <span class="shop__icon">
+        <i class="material-icons text-5xl">store</i>
+      </span>
+      <span class="shop__text">Shop</span>
+    </div>
+    <div
+      (click)="selectTab(2)"
+      class="cart"
+      [ngClass]="{
+        active: currentTab === 2
+      }"
+    >
+      <span class="cart__icon"
+        ><i class="material-icons text-5xl">local_grocery_store</i></span
       >
-        <span class="material-symbols-outlined"> </span>
-        <div class="flex items-center">
-          <i class="material-icons">store</i>Shop
-        </div>
-      </li>
-
-      <li
-        (click)="selectTab(2)"
-        [ngClass]="{
-          'border-b border-l border-r textactive bg-red-600': currentTab === 2,
-          'px-3 py-2 hover:bg-blue-50 cursor-pointer': true
-        }"
+      <span class="cart__text">Cart</span>
+    </div>
+    <div
+      class="profile"
+      (click)="selectTab(3)"
+      [ngClass]="{
+        active: currentTab === 3
+      }"
+    >
+      <span class="profile__icon"
+        ><i class="material-icons text-5xl">person</i></span
       >
-        <div class="flex items-center">
-          <i class="material-icons">local_grocery_store</i>Cart
-        </div>
-      </li>
-
-      <li
-        (click)="selectTab(3)"
-        [ngClass]="{
-          'border-b border-l border-r textactive bg-red-600': currentTab === 3,
-          'px-3 py-2 hover:bg-blue-50 cursor-pointer': true
-        }"
-      >
-        <div class="flex items-center">
-          <i class="material-icons">person</i>My Profile
-        </div>
-      </li>
-    </ul>
+      <span class="profile__text">My Profile</span>
+    </div>
   </div>
-  <div class="flex-1 px-4 py-2 relative">
-    <!-- <router-outlet></router-outlet> -->
-    <ng-container *ngIf="currentTab === 1">
-      <app-phones></app-phones>
-    </ng-container>
-    <ng-container *ngIf="currentTab === 2">
-      <app-cart></app-cart>
-    </ng-container>
-    <ng-container *ngIf="currentTab === 3">
-      <!-- <app-phonedetail></app-phonedetail> -->
-      <app-myprofile></app-myprofile>
-    </ng-container>
-  </div>
+  <hr class="vertical-line" />
+</div>
+<div class="main relative">
+  <ng-container *ngIf="currentTab === 1">
+    <app-phones></app-phones>
+  </ng-container>
+  <ng-container *ngIf="currentTab === 2">
+    <app-cart></app-cart>
+  </ng-container>
+  <ng-container *ngIf="currentTab === 3">
+    <!-- <app-phonedetail></app-phonedetail> -->
+    <app-myprofile></app-myprofile>
+  </ng-container>
 </div>

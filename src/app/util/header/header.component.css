@@ -1,0 +1,43 @@
+nav {
+  position: absolute;
+  height: 119px;
+  left: 0px;
+  top: 0px;
+  background: #c6e5f4;
+}
+
+.nav__logo {
+  position: absolute;
+  width: 98px;
+  height: 86px;
+  left: 37px;
+  top: 10px;
+  background-image: url("https://s3-alpha-sig.figma.com/img/b6e8/93c4/d34c78218f2e618bae4d316ce9b46881?Expires=1680480000&Signature=hT1hAo2ZMYUmE01ibB4ex5B1uopYzYQnkXTwO8rS-D5t3zxXceFMV1mKDxgjffPyfnUVL3nlT4e9u7rvcqSD904BstQbgjbq-7QO2S9G8iIuWiMHfMeAOXj47ZUmuBnxMsEZrefgA~8HCC7yyzMxEx9FNM2kWfS8VI9sGJeOZeWmNVqq3O94OIcMcSQpuCPUtzG~dSTXUryHHMQdmGMOknVk3fwEO2QVg8sQ509MROHO0fzrJ4ZTYVQ0-I0La9-l9OTs-DJgSDkpPxENWd0IMv~PxNhO2vEOb~YUvBICuNfGRuvGjvX-uBpma2Jk-KGoSFl-s~6VQr2iQqELuHCq7A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nav__text {
+  position: absolute;
+  width: 505px;
+  height: 66px;
+  left: 163px;
+  top: 30px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.nav__avatar {
+  position: absolute;
+  width: 69px;
+  height: 69px;
+  left: 1600px;
+  top: 27px;
+  background-image: url("https://s3-alpha-sig.figma.com/img/fa77/2ed1/10e7ea98f927884bc61c118fc3fd77a8?Expires=1680480000&Signature=UVXPDfJ2u3UfCT83eo6cVJafYF4DNrlqHJHawQvTMZtEURqpEqOKGZf~62BKHBWyZoXHSKU52HJpqxQfk1LkpRnoMKX2UtP~c4sxnOtspffmLdosNf4ox8YT~FW-KkFupPfL4npeRZCQPIDN9Jm9fuks4noiD3k2600rznJaPrl7uw~XYUmsvs0E07OY1UDvsDWbNF62JUr3lhgTR7rvh6KlhK8Fjj2eevWf0GpzriY5-VSPdsaSz0obMT--we6GIo3dQzl3d~9r0IpJNYhNWd3NhIOj~sQm73WpNUjs4IPQ9GnIc9kRkp4fzk-Yb0e6uPkjQKAS2PQelde6SsPD-g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

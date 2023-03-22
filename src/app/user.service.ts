@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { of, throwError } from 'rxjs';
 import { User } from 'src/models/user';
-import { fakeUser } from './fake-userdata';
+
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 const httpOptions = {
@@ -13,9 +13,7 @@ const httpOptions = {
 })
 export class UserService {
   constructor(private http: HttpClient) {}
-  getuser(): Observable<User> {
-    return of(fakeUser);
-  }
+
   private apiUrl = 'http://localhost:3002/api/users';
   login(email: string, password: string): Observable<any> {
     const body = { email, password };

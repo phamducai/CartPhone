@@ -1,65 +1,70 @@
-<div class="textheader">Shop</div>
-<div>
-  <span class="textHeader"> Shop</span>
-</div>
-<input
-  type="text"
-  class="inputtext"
-  placeholder="Search..."
-  #searchBox
-  (input)="searchPhonesByName(searchBox.value)"
-/>
-<!-- <div class="textplacehoder">Search...</div> -->
-<img
-  src="https://www.clarin.eu/sites/default/files/styles/medium/public/icon-services-fcs.png?itok=seug9Hqn"
-  class="iconsearch"
-  alt=""
-/>
-<img
-  src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png"
-  class="imgfilter"
-  alt=""
-/>
-<hr class="hrfix" />
-<div class="mt-32"></div>
+<div class="text-shop">Shop</div>
+<div class="head">
+  <div class="head__text">shop</div>
+  <input
+    type="text"
+    class="head__search"
+    placeholder="Search..."
+    #searchBox
+    (input)="searchPhonesByName(searchBox.value)"
+  />
 
-<div class="grid grid-cols-2 justify-start gap-4">
-  <div *ngFor="let item of phones">
-    <a routerLink="/shop/{{ item.id }}"
-      ><div class="flex justify-items: center">
-        <img src="{{ item.image }}" alt="" class="imgphone mr-4" />
-        <div class="flex flex-col justify-around">
-          <h1 class="phonename">{{ item.name }}</h1>
-          <p class="pricevnd">
-            <span class="mr-4">{{
-              item.price.toString().slice(-9, item.price.toString().length - 6)
-            }}</span>
-            <span class="mr-4">{{
-              item.price.toString().slice(-6, item.price.toString().length - 3)
-            }}</span>
-            <span class="mr-4">{{
-              item.price.toString().slice(-3, item.price.toString().length)
-            }}</span>
-            VND
-          </p>
-          <div class="flex">
-            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-              <svg
-                class="h-12 w-12 fill-current"
-                [ngClass]="{
-                  'text-gray-400': item.rate < star,
-                  star: item.rate >= star
-                }"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
-                />
-              </svg>
-            </ng-container>
-          </div>
-        </div></div
-    ></a>
+  <img
+    src="https://www.clarin.eu/sites/default/files/styles/medium/public/icon-services-fcs.png?itok=seug9Hqn"
+    class="head__search__icon"
+    alt="icon"
+  />
+  <img
+    src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png"
+    class="head__filter__icon"
+    alt=""
+  />
+</div>
+
+<hr class="hr-fix" />
+<div class="phones">
+  <div class="grid grid-cols-2 justify-items-start gap-y-24 gap-x-14">
+    <div *ngFor="let item of phones">
+      <a routerLink="/shop/{{ item.id }}"
+        ><div class="flex justify-items: center">
+          <img src="{{ item.image }}" alt="" class="img-phone mr-4" />
+          <div class="flex flex-col justify-around">
+            <h1 class="phone-name">{{ item.name }}</h1>
+            <p class="price-vnd">
+              <span class="mr-4">{{
+                item.price
+                  .toString()
+                  .slice(-9, item.price.toString().length - 6)
+              }}</span>
+              <span class="mr-4">{{
+                item.price
+                  .toString()
+                  .slice(-6, item.price.toString().length - 3)
+              }}</span>
+              <span class="mr-4">{{
+                item.price.toString().slice(-3, item.price.toString().length)
+              }}</span>
+              VND
+            </p>
+            <div class="flex">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                <svg
+                  class="h-12 w-12 fill-current"
+                  [ngClass]="{
+                    'text-gray-400': item.rate < star,
+                    star: item.rate >= star
+                  }"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
+                  />
+                </svg>
+              </ng-container>
+            </div>
+          </div></div
+      ></a>
+    </div>
   </div>
 </div>

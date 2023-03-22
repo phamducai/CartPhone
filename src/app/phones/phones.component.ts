@@ -1,7 +1,7 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Phone } from 'src/models/phone';
 import { PhoneService } from '../phone.service';
-import { Subject, switchMap } from 'rxjs';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-phones',
   templateUrl: './phones.component.html',
@@ -28,11 +28,9 @@ export class PhonesComponent implements OnInit {
       this.phones = data.content;
     });
   }
-
   search(name: string): void {
     this.searchSubject.next(name);
   }
-
   ngOnInit() {
     this.getMPhonesFromServices();
   }
