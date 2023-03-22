@@ -11,7 +11,7 @@ import { TabsComponent } from '../tabs/tabs.component';
   templateUrl: './phonedetail.component.html',
   styleUrls: ['./phonedetail.component.css'],
 })
-export class PhonedetailComponent implements OnInit, OnDestroy {
+export class PhonedetailComponent implements OnInit {
   rate = 0;
   sum = 0;
   phone: Phone | undefined;
@@ -22,9 +22,7 @@ export class PhonedetailComponent implements OnInit, OnDestroy {
     public cartphoneService: CartphoneService,
     public tabsComponent: TabsComponent
   ) {}
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy');
-  }
+
   ngOnInit(): void {
     console.log(this.phone);
     this.getPhoneFromRoute();

@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { User } from 'src/models/user';
 import { AppComponent } from 'src/app/app.component';
-import { TabsComponent } from '../../tabs/tabs.component';
+import { TabsComponent } from '../tabs.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
