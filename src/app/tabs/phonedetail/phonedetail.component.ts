@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PhoneService } from '../phone.service';
+import { PhoneService } from 'src/app/phone.service';
 import { Phone } from 'src/models/phone';
 import * as _ from 'lodash';
-import { CartphoneService } from '../cartphone.service';
-import { TabsComponent } from '../tabs/tabs.component';
+import { CartphoneService } from 'src/app/cartphone.service';
+import { TabsComponent } from '../tabs.component';
 
 @Component({
   selector: 'app-phonedetail',

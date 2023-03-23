@@ -1,54 +1,225 @@
-.textheader {
+.text-profile {
   position: absolute;
   width: 405px;
   height: 60px;
   left: 21px;
   top: 3px;
-
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 16px;
-  /* or 44% */
-
   display: flex;
   align-items: center;
   color: #000000;
 }
-
-.imageuser {
+.image-upload {
+  position: absolute;
   width: 186px;
   height: 190px;
-  margin-left: 107px;
-  border-radius: 10px;
+  left: 106px;
+  top: 136px;
 }
-.h1text {
+.content .content__name {
+  position: absolute;
+  width: 448px;
+  height: 46px;
+  left: 377px;
+  top: 167px;
+
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 700;
   font-size: 48px;
   line-height: 56px;
-  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
 }
-.textemail {
+.content .content__email {
+  position: absolute;
+  width: 514px;
+  height: 63px;
+  left: 379px;
+  top: 243px;
+
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
   line-height: 42px;
-  color: #000000;
-  margin-top: 15px;
-  width: 500px;
-}
-.margincontent {
-  margin-left: 72px;
-  margin-top: 68px;
+  display: flex;
+  align-items: center;
 
+  color: #000000;
+}
+.content .content__date {
+  position: absolute;
+  width: 264px;
+  height: 57px;
+  left: 88px;
+  top: 394px;
+
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
 }
-.address {
-  width: 1100px;
+.content .content__sex {
+  position: absolute;
+  width: 264px;
+  height: 57px;
+  left: 88px;
+  top: 459px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
 }
-.customs {
-  width: 500px;
+.content .content__comp {
+  position: absolute;
+  width: 264px;
+  height: 57px;
+  left: 88px;
+  top: 524px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.content .content__home {
+  position: absolute;
+  width: 264px;
+  height: 57px;
+  left: 88px;
+  top: 589px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.content__value__date {
+  position: absolute;
+  width: 691px;
+  height: 57px;
+  left: 380px;
+  top: 386px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.content__value__sex {
+  position: absolute;
+  width: 691px;
+  height: 57px;
+  left: 380px;
+  top: 451px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 35px;
+}
+.content__hr_date {
+  position: absolute;
+  width: 200px;
+  height: 0px;
+  left: 379px;
+  top: 431px;
+  border: 1px solid #000000;
+}
+.content__value__comp {
+  position: absolute;
+  width: 691px;
+  height: 57px;
+  left: 380px;
+  top: 516px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.content__value__home {
+  position: absolute;
+  width: 691px;
+  height: 57px;
+  left: 380px;
+  top: 581px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.content__hr_comp {
+  position: absolute;
+  width: 480px;
+  height: 0px;
+  left: 385px;
+  top: 573px;
+
+  border: 1px solid #000000;
+}
+.content__hr__home {
+  position: absolute;
+  width: 477px;
+  height: 0px;
+  left: 385px;
+  top: 638px;
+
+  border: 1px solid #000000;
 }

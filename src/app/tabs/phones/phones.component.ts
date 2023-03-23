@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from 'src/models/phone';
-import { PhoneService } from '../phone.service';
+import { PhoneService } from 'src/app/phone.service';
 import { Subject } from 'rxjs';
 @Component({
   selector: 'app-phones',

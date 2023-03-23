@@ -14,20 +14,17 @@ export class MyprofileComponent implements OnInit {
   //default form
   imageUrl: string | undefined;
   selectedSex: string = '';
-  formatdata: string = '';
+  formatData: string = '';
 
   ngOnInit(): void {
     this.user = this.appComponent.user;
     console.log(this.user);
-    this.formatdata = dayjs(this.user?.dateOfBirth).format('YYYY-MM-DD');
+    this.formatData = dayjs(this.user?.dateOfBirth).format('YYYY-MM-DD');
     this.selectedSex = this.user?.sex;
     this.imageUrl = this.user?.avatar;
   }
 
-  constructor(
-    private userService: UserService,
-    private appComponent: AppComponent
-  ) {}
+  constructor(private appComponent: AppComponent) {}
 
   onFileSelected(event: any): void {
     const file = event.target.files[0];

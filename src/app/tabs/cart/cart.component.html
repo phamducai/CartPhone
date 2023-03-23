@@ -1,16 +1,19 @@
 <div class="text-cart">Cart</div>
 <div class="total-item">{{ sum }} items in bags</div>
-<hr class="hr-fix" />
-<div class="mt-32">
+<div class="hr-fix"></div>
+<div class="content">
   <div *ngFor="let item of cartphoneService.cartphone">
-    <div class="">
-      <div class="image-phone">
-        <img src="{{ item.image }}" alt="" class="h-full w-full" />
+    <div class="flex items-center">
+      <div class="image">
+        <img src="{{ item.image }}" alt="" class="w-full h-full" />
       </div>
-      <div class="content">
-        <h1 class="content__name">{{ item.name }}</h1>
-        <p class="content__desc">{{ item.description }}</p>
-        <p class="content__price">
+
+      <div class="detail flex flex-col">
+        <h1 class="detail__name">{{ item.name }}</h1>
+        <p class="detail__desc">
+          {{ item.description }}
+        </p>
+        <p class="detail__price">
           <span class="mr-2">{{
             item.price.toString().slice(-9, item.price.toString().length - 6)
           }}</span>
@@ -23,22 +26,23 @@
           VND
         </p>
       </div>
-      <div>
-        <button (click)="onClicks(item.id, 1)" class="button__plus">+</button>
+      <div class="button">
+        <button class="button__plus" (click)="onClicks(item.id, 1)">+</button>
         <span class="number"> {{ item?.quantity }}</span>
-        <button (click)="onClicks(item.id, -1)" class="button__sub">-</button>
+        <button class="button__sub" (click)="onClicks(item.id, -1)">-</button>
       </div>
-      <div class="content__line relative"></div>
     </div>
+    <div class="content__line"></div>
   </div>
+  <div></div>
 
-  <!-- <div class="relative">
-    <div class="">
+  <div class="flex justify-end" *ngIf="sum > 0">
+    <div class="flex flex-col items-end justify-end">
       <p class="sub-total">SubToTal</p>
       <p class="tax">Tax</p>
       <p class="total">Total</p>
     </div>
-    <div class="">
+    <div class="payment">
       <p class="price-sub-total">
         {{
           payment
@@ -80,5 +84,5 @@
         }}
       </p>
     </div>
-  </div> -->
+  </div>
 </div>

@@ -3,7 +3,7 @@
   top: 119px;
   left: 0px;
 }
-.menu {
+.content .menu {
   box-sizing: border-box;
   position: absolute;
   width: 243px;
@@ -13,10 +13,10 @@
   background: #ffffff;
   border: 1px solid #000000;
 }
-.active {
+.content .active {
   color: #0feaf8;
 }
-.menu__text {
+.content .menu .menu__text {
   position: absolute;
   width: 164px;
   height: 27px;
@@ -32,7 +32,7 @@
   color: #000000;
 }
 
-.menu__icon--line1 {
+.content .menu .menu__icon--line1 {
   position: absolute;
   width: 23px;
   height: 0px;
@@ -40,7 +40,7 @@
   top: 18px;
   border: 1px solid #000000;
 }
-.menu__icon--line2 {
+.content .menu .menu__icon--line2 {
   position: absolute;
   width: 23px;
   height: 0px;
@@ -48,7 +48,7 @@
   top: 30px;
   border: 1px solid #000000;
 }
-.menu__icon--line3 {
+.content .menu .menu__icon--line3 {
   position: absolute;
   width: 23px;
   height: 0px;
@@ -57,14 +57,14 @@
   border: 1px solid #000000;
 }
 
-.shop__icon {
+.content .shop__icon {
   position: absolute;
   width: 44px;
   height: 42.62px;
   left: 17px;
   top: 69.69px;
 }
-.shop__text {
+.content .shop__text {
   position: absolute;
   width: 169px;
   height: 62px;
@@ -78,14 +78,14 @@
   line-height: 28px;
   display: flex;
 }
-.cart__icon {
+.content .cart__icon {
   position: absolute;
   width: 43px;
   height: 43px;
   left: 17px;
   top: 132px;
 }
-.cart__text {
+.content .cart__text {
   position: absolute;
   width: 169px;
   height: 62px;
@@ -102,14 +102,14 @@
 
   color: #000000;
 }
-.profile__icon {
+.content .profile__icon {
   position: absolute;
   width: 46px;
   height: 46px;
   left: 15px;
   top: 193px;
 }
-.profile__text {
+.content .profile__text {
   position: absolute;
   width: 169px;
   height: 63px;
@@ -124,7 +124,7 @@
   display: flex;
   align-items: center;
 }
-.vertical-line {
+.content .vertical-line {
   position: absolute;
   top: 0;
   left: 232px;
@@ -138,7 +138,7 @@
   top: 115px;
   left: 243px;
 }
-.hr-fix {
+.main .hr-fix {
   position: absolute;
   width: 1660px;
   height: 0px;
@@ -148,7 +148,7 @@
   border: 1px solid #adadad;
   transform: rotate(0.12deg);
 }
-.text-shop {
+.main .text-shop {
   position: absolute;
   width: 405px;
   height: 60px;
@@ -164,7 +164,7 @@
   color: #000000;
 }
 
-.head__text {
+.main .head__text {
   position: absolute;
   width: 191px;
   height: 58px;
@@ -179,7 +179,7 @@
   align-items: center;
   color: #000000;
 }
-.head__product {
+.main .head__product {
   position: absolute;
   width: 256px;
   height: 58px;
@@ -198,7 +198,7 @@
 
   color: #000000;
 }
-.head__image {
+.main .head__image {
   background-image: url("https://s3-alpha-sig.figma.com/img/ce36/d3d0/9dedaa937941fd09c5856bc305270cb6?Expires=1680480000&Signature=TX2LSa1IbIwUYKDOs2toBiaI3wjnQaJTgklVEjHS1CwA58s5wwbsX-6i0hkj6UgqFBvsXANLemskz3T~gILyqEJ5WWmLjXI42cnWly~0O6zp6i8T4dSQG0rXO76osPz8fypTchdfEg4Z-jdr0I1hRHO5RhpSzaoOb4SyNosLnNLC-kVwxsovIe3qOKLEW0iI3sTmkrBV0mjzjwjBn5I9~T1pehAIz3RJHwshJMoYNFFKORaFhVGgX~QAYoOW4vXc9e23bEf7FyvJcXPzrT3TpWynrT6AkZJevvzmTPzrVDjEU5r9Kww~guiAVNqiYgRv9bIST1h5vQbM3X8qHSR-hQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,7 +208,7 @@
   left: 1384px;
   top: 73px;
 }
-.head__number {
+.main .head__number {
   position: absolute;
   width: 12px;
   height: 18px;
@@ -223,7 +223,7 @@
   align-items: center;
   color: #000000;
 }
-.content__image {
+.main .content__image {
   position: absolute;
   width: 408px;
   height: 478px;
@@ -233,7 +233,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.content__title {
+.main .content__title {
   position: absolute;
   width: 497px;
   height: 48px;
@@ -248,7 +248,7 @@
   align-items: center;
   color: #000000;
 }
-.content__text {
+.main .content__text {
   position: absolute;
   width: 760px;
   height: 155px;
@@ -266,7 +266,7 @@
 
   color: #000000;
 }
-.content__price {
+.main .content__price {
   position: absolute;
   width: 760px;
   height: 61px;
@@ -285,24 +285,24 @@
 
   color: #000000;
 }
-.content__star {
+.main .content__star {
   position: absolute;
   left: 493px;
   top: 492px;
 }
-.button {
+.main .button {
   width: 368px;
   height: 103px;
   border-radius: 10px;
 }
-.button--primary {
+.main .button--primary {
   position: absolute;
 
   left: 495px;
   top: 582px;
   background: #00c2ff;
 }
-.button__buy {
+.main .button__buy {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -311,14 +311,14 @@
   color: #fffdfd;
   padding: 16px 20.63px 19px 16.5px;
 }
-.button--success {
+.main .button--success {
   position: absolute;
   left: 905px;
   top: 582px;
   background: #00ff19;
   border-radius: 10px;
 }
-.button__add {
+.main .button__add {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -327,7 +327,7 @@
   color: #fffdfd;
   padding: 16px 20.07px 19px 16.05px;
 }
-.content__img {
+.main .content__img {
   position: absolute;
   width: 198px;
   height: 107px;

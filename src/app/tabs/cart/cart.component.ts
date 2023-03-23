@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import { CartphoneService } from '../cartphone.service';
+import { CartphoneService } from 'src/app/cartphone.service';
 
 @Component({
   selector: 'app-cart',
