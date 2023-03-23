@@ -1,26 +1,29 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { User } from 'src/models/user';
+
 import { AppComponent } from 'src/app/app.component';
 import { TabsComponent } from '../tabs.component';
+import { LoginService } from 'src/app/login.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  user: User | undefined;
+  image: string | undefined;
   constructor(
     private appComponent: AppComponent,
-    public tabsComponent: TabsComponent
+    public tabsComponent: TabsComponent,
+    private login: LoginService
   ) {}
   ngOnInit(): void {
-    this.user = this.appComponent.user;
-    this.appComponent.newUser.subscribe(() => {
-      this.user = this.appComponent.user;
+    this.login.user$.subscribe((user) => {
+      this.image = user?.avatar;
+    });
+    this.login.image$.subscribe((user) => {
+      this.image = user;
     });
   }
   onClick(): void {
-    console.log('haha');
     this.tabsComponent.selectTab(3);
   }
   ngOnChanges(changes: SimpleChanges): void {

@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class LoginService {
   user = new BehaviorSubject<any>(null);
   user$ = this.user.asObservable();
-  token = new BehaviorSubject<string>('');
-  token$ = this.token.asObservable();
+  image = new BehaviorSubject<any>('');
+  image$ = this.image.asObservable();
   constructor() {}
 }

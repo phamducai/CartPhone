@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
               JSON.stringify(response.content.token)
             );
             this.login.user.next(response.content.checkUser);
-            console.log(response);
           }
         });
     }

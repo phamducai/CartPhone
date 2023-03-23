@@ -1,5 +1,11 @@
 <nav class="w-full">
   <div class="nav__logo"></div>
   <div class="nav__text">Mobile Shopping</div>
-  <div class="nav__avatar" (click)="onClick()"></div>
+  <div
+    class="nav__avatar rounded-full"
+    (click)="onClick()"
+    style="
+      background-image: url('{{ image }}');
+    "
+  ></div>
 </nav>

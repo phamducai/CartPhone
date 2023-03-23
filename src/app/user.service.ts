@@ -4,7 +4,8 @@ import { of, throwError } from 'rxjs';
 import { User } from 'src/models/user';
 
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
@@ -29,8 +30,11 @@ export class UserService {
       .pipe(catchError((error) => of(null)));
   }
   uploadAvatar(id: number | undefined, fd: FormData): Observable<any> {
-    return this.http
-      .post<any>(this.apiUrl + `/upload/${id}`, fd)
-      .pipe(catchError((error) => of(null)));
+    return this.http.post<any>(this.apiUrl + `/upload/${id}`, fd).pipe(
+      tap((re) => {
+  
+      }),
+      catchError((error) => of(null))
+    );
   }
 }

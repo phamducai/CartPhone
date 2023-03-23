@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+  Injectable,
+} from '@angular/core';
 import { User } from 'src/models/user';
 import { AppComponent } from '../app.component';
 import { UserService } from '../user.service';
@@ -11,6 +16,12 @@ import { LoginService } from '../login.service';
   styleUrls: ['./myprofile.component.css'],
 })
 export class MyprofileComponent implements OnInit {
+  constructor(
+    private userService: UserService,
+    private login: LoginService,
+    private cdRef: ChangeDetectorRef
+  ) {}
+
   user: User | undefined;
   //default form
   imageUrl: string | undefined;
@@ -19,24 +30,14 @@ export class MyprofileComponent implements OnInit {
 
   ngOnInit(): void {
     this.login.user$.subscribe((user) => {
-      console.log('ngOnInit ', user);
-
       this.user = user;
       this.formatData = dayjs(this.user?.dateOfBirth).format('YYYY-MM-DD');
       this.selectedSex = this.user?.sex;
       this.imageUrl = this.user?.avatar;
-      console.log(this.imageUrl);
-
+      this.login.image.next(this.imageUrl);
       this.updateDetectChange();
     });
   }
-
-  constructor(
-    private appComponent: AppComponent,
-    private userService: UserService,
-    private login: LoginService,
-    private cdRef: ChangeDetectorRef
-  ) {}
 
   updateDetectChange(): void {
     this.cdRef.detectChanges();
@@ -52,6 +53,7 @@ export class MyprofileComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imageUrl = reader.result as string;
+        this.login.image.next(this.imageUrl);
       };
       this.userService
         .uploadAvatar(this.user?.id, fd)
