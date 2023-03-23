@@ -1,6 +1,13 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import {
+  Component,
+  Injectable,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/models/user';
+import { LoginService } from './login.service';
 import { UserService } from './user.service';
 
 @Component({
@@ -11,8 +18,8 @@ import { UserService } from './user.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AppComponent implements OnInit {
-  constructor(private userService: UserService) {}
+export class AppComponent implements OnInit, OnChanges {
+  constructor(private userService: UserService, private login: LoginService) {}
   title = 'my-project';
   token: string | null = localStorage.getItem('tokencartphone');
   user: User | undefined;
@@ -20,14 +27,22 @@ export class AppComponent implements OnInit {
   newUser: BehaviorSubject<User> = new BehaviorSubject<User>({});
 
   ngOnInit() {
-    if (this.token) {
-      this.userService
-        .getdetail(JSON.parse(this.token))
-        .subscribe((response) => {
-          this.user = response.content;
-          console.log(this.user);
-          this.newUser.next(response.content);
-        });
+    console.log('ngOnInit');
+
+    const token: string | null = localStorage.getItem('tokencartphone');
+    if (token) {
+      this.userService.getdetail(JSON.parse(token)).subscribe((response) => {
+        console.log(response);
+
+        this.user = response.content;
+        this.login.user.next(this.user);
+        console.log(this.user);
+        this.newUser.next(response.content);
+      });
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
   }
 }

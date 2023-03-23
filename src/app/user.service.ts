@@ -28,4 +28,9 @@ export class UserService {
       .post<any>(this.apiUrl + '/token', body)
       .pipe(catchError((error) => of(null)));
   }
+  uploadAvatar(id: number | undefined, fd: FormData): Observable<any> {
+    return this.http
+      .post<any>(this.apiUrl + `/upload/${id}`, fd)
+      .pipe(catchError((error) => of(null)));
+  }
 }

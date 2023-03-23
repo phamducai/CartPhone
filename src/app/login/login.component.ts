@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private login: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -38,8 +40,9 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['']);
             localStorage.setItem(
               'tokencartphone',
-              JSON.stringify(response.content)
+              JSON.stringify(response.content.token)
             );
+            this.login.user.next(response.content.checkUser);
             console.log(response);
           }
         });

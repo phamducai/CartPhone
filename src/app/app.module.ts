@@ -9,12 +9,13 @@ import { TabsComponent } from './tabs/tabs.component';
 import { PhonesComponent } from './tabs/phones/phones.component';
 import { PhoneService } from './phone.service';
 import { PhonedetailComponent } from './tabs/phonedetail/phonedetail.component';
-import { CartComponent } from './tabs/cart/cart.component';
+
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './tabs/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
