@@ -6,7 +6,7 @@ nav {
   background: #c6e5f4;
 }
 
-.nav__logo {
+nav .nav__logo {
   position: absolute;
   width: 98px;
   height: 86px;
@@ -16,7 +16,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.nav__text {
+nav .nav__text {
   position: absolute;
   width: 505px;
   height: 66px;
@@ -31,7 +31,7 @@ nav {
   align-items: center;
   color: #000000;
 }
-.nav__avatar {
+nav .nav__avatar {
   position: absolute;
   width: 69px;
   height: 69px;

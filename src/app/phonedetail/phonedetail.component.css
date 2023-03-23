@@ -22,7 +22,6 @@
   height: 27px;
   left: 17px;
   top: 15px;
-
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -327,4 +326,14 @@
   line-height: 16px;
   color: #fffdfd;
   padding: 16px 20.07px 19px 16.05px;
+}
+.content__img {
+  position: absolute;
+  width: 198px;
+  height: 107px;
+  left: 138px;
+  top: 685px;
+  background-image: url("https://s3-alpha-sig.figma.com/img/fe1f/c85d/beecf0aa808961fe7cad2de058c0fce2?Expires=1680480000&Signature=Zh1gAGQ0xNFViqVFVpKdLjNgC1qP2YNjfhMFyrRx6Epy-4~2-WFGvG6FPpRGdZgmNgNFPKcVLNgiC-pUujBqhPmOmibCB9PqdWlLcyhbv4qFRO-SyZmY6D9hdpr04D0llFXQgb6SXk7aU12qdUKxP-WtH-W3gdS3TOpIUx7nVtAnYKtC9FxQh5YcYdGOzwlSGUx8v9lbonqcZK2HTXDmIdcJ-nVizCAJo0cLYrHAvMoLTz5nL5mc~oOfYaUx86vc38JZTLRwZ-ECOt6wK0OQgP4FXjBgEon5BBJFWJPGyATN-HQiHFGBJGLHuOjfyUkJsr1vPCc8wxJhDonSLs-14w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

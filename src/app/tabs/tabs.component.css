@@ -3,7 +3,7 @@
   top: 119px;
   left: 0px;
 }
-.menu {
+.content .menu {
   box-sizing: border-box;
   position: absolute;
   width: 243px;
@@ -16,7 +16,7 @@
 .active {
   color: #0feaf8;
 }
-.menu__text {
+.content .menu .menu__text {
   position: absolute;
   width: 164px;
   height: 27px;
@@ -33,7 +33,7 @@
   color: #000000;
 }
 
-.menu__icon--line1 {
+.content .menu .menu__icon--line1 {
   position: absolute;
   width: 23px;
   height: 0px;
@@ -41,7 +41,7 @@
   top: 18px;
   border: 1px solid #000000;
 }
-.menu__icon--line2 {
+.content .menu .menu__icon--line2 {
   position: absolute;
   width: 23px;
   height: 0px;
@@ -49,7 +49,7 @@
   top: 30px;
   border: 1px solid #000000;
 }
-.menu__icon--line3 {
+.content .menu .menu__icon--line3 {
   position: absolute;
   width: 23px;
   height: 0px;
@@ -58,14 +58,15 @@
   border: 1px solid #000000;
 }
 
-.shop__icon {
+.content .shop__icon {
   position: absolute;
   width: 44px;
   height: 42.62px;
   left: 17px;
   top: 69.69px;
 }
-.shop__text {
+
+.content .shop__text {
   position: absolute;
   width: 169px;
   height: 62px;
@@ -79,14 +80,14 @@
   line-height: 28px;
   display: flex;
 }
-.cart__icon {
+.content .cart__icon {
   position: absolute;
   width: 43px;
   height: 43px;
   left: 17px;
   top: 132px;
 }
-.cart__text {
+.content .cart__text {
   position: absolute;
   width: 169px;
   height: 62px;
@@ -103,14 +104,14 @@
 
   color: #000000;
 }
-.profile__icon {
+.content .profile__icon {
   position: absolute;
   width: 46px;
   height: 46px;
   left: 15px;
   top: 193px;
 }
-.profile__text {
+.content .profile__text {
   position: absolute;
   width: 169px;
   height: 63px;
@@ -125,7 +126,7 @@
   display: flex;
   align-items: center;
 }
-.vertical-line {
+.content .vertical-line {
   position: absolute;
   top: 0;
   left: 232px;
