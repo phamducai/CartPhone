@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 import { AppComponent } from 'src/app/app.component';
-import { TabsComponent } from '../tabs.component';
+import { TabsComponent } from '../../tabs/tabs.component';
 import { LoginService } from 'src/app/login.service';
 @Component({
   selector: 'app-header',
@@ -11,7 +11,6 @@ import { LoginService } from 'src/app/login.service';
 export class HeaderComponent implements OnInit, OnChanges {
   image: string | undefined;
   constructor(
-    private appComponent: AppComponent,
     public tabsComponent: TabsComponent,
     private login: LoginService
   ) {}

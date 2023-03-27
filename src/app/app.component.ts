@@ -36,8 +36,6 @@ export class AppComponent implements OnInit, OnChanges {
 
         this.user = response.content;
         this.login.user.next(this.user);
-        console.log(this.user);
-        this.newUser.next(response.content);
       });
     }
   }

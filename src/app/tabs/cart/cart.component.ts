@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   payment = 0;
   constructor(public cartphoneService: CartphoneService) {}
   ngOnInit(): void {
+    console.log(this.cartphoneService.cartphone);
     this.calculateSumAndPayment();
   }
 
@@ -27,11 +28,12 @@ export class CartComponent implements OnInit {
   }
 
   private calculateSumAndPayment(): void {
-    this.sum = _.sumBy(
-      this.cartphoneService.cartphone,
-      (currentValue) => currentValue.quantity
-    );
-
+    // this.sum = _.sumBy(
+    //   this.cartphoneService.cartphone,
+    //   (currentValue) => currentValue.quantity
+    // );
+    this.sum = _.sumBy(this.cartphoneService.cartphone, 'quantity');
+    // this.sum = this.cartphoneService.cartphone.length;
     this.payment = _.sumBy(
       this.cartphoneService.cartphone,
       (currentValue) => currentValue.quantity * currentValue.price

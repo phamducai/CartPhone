@@ -5,10 +5,10 @@ import {
   Injectable,
 } from '@angular/core';
 import { User } from 'src/models/user';
-import { AppComponent } from '../app.component';
-import { UserService } from '../user.service';
+import { AppComponent } from '../../app.component';
+import { UserService } from '../../user.service';
 import * as dayjs from 'dayjs';
-import { LoginService } from '../login.service';
+import { LoginService } from '../../login.service';
 
 @Component({
   selector: 'app-myprofile',

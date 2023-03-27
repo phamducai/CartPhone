@@ -40,3 +40,17 @@ nav .nav__avatar {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media only screen and (max-width: 600px) {
+  nav .nav__text {
+    font-size: 24px;
+  }
+  nav .nav__logo {
+    position: absolute;
+    width: 98px;
+    height: 86px;
+  }
+  nav .nav__avatar {
+    left: 485px;
+    top: 27px;
+  }
+}

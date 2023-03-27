@@ -9,6 +9,10 @@ import { Subject } from 'rxjs';
 })
 export class PhonesComponent implements OnInit {
   phones: Phone[] | undefined;
+  showModal = false;
+  toggleModal() {
+    this.showModal = !this.showModal;
+  }
   constructor(private phoneService: PhoneService) {}
   selectedPhone: Phone | undefined;
   onSelect(phone: Phone): void {

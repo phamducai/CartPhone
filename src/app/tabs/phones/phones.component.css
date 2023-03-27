@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .hr-fix {
   position: absolute;
   width: 1660px;
@@ -122,4 +126,245 @@
 }
 .phones .star {
   color: #ffdd55;
+}
+
+.filter {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 617px;
+  height: 89px;
+  right: -573px;
+  top: 126px;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+.filter .filter__header {
+  position: absolute;
+  width: 200px;
+  height: 89px;
+  left: 260px;
+  top: 0px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter .filter__price {
+  position: absolute;
+  width: 308px;
+  height: 53px;
+  left: 130px;
+  top: 109px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__from {
+  position: absolute;
+  width: 154px;
+  height: 61px;
+  left: 30px;
+  top: 159px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+.filter__from-price {
+  position: absolute;
+  width: 200px;
+  height: 61px;
+  left: 338px;
+  top: 162px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__from-icon {
+  position: absolute;
+  left: 538px;
+  top: 158px;
+}
+.filter__to {
+  position: absolute;
+  width: 154px;
+  height: 61px;
+  left: 23px;
+  top: 223px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__to-price {
+  position: absolute;
+  width: 300px;
+  height: 61px;
+  left: 258px;
+  top: 226px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__to-icon {
+  position: absolute;
+  left: 538px;
+  top: 226px;
+}
+.filter__rate {
+  position: absolute;
+  width: 308px;
+  height: 53px;
+  left: 76px;
+  top: 326px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__rate-from {
+  position: absolute;
+  width: 154px;
+  height: 61px;
+  left: 30px;
+  top: 376px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  /* or 44% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__rate-from-star {
+  position: absolute;
+  width: 200px;
+  height: 61px;
+  left: 379px;
+  top: 379px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.filter__rate-from-icon {
+  position: absolute;
+  left: 538px;
+  top: 379px;
+}
+.filter__rate-to {
+  position: absolute;
+  width: 154px;
+  height: 61px;
+  left: 23px;
+  top: 440px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.filter__rate-to-star {
+  position: absolute;
+  width: 200px;
+  height: 61px;
+  left: 379px;
+  top: 443px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.filter__rate-to-icon {
+  position: absolute;
+  left: 538px;
+  top: 443px;
 }
