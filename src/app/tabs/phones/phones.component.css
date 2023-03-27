@@ -63,7 +63,7 @@ body {
   display: flex;
   align-items: center;
   color: #000000;
-  z-index: 5;
+  z-index: 4;
 }
 .head__product {
   position: absolute;
@@ -90,6 +90,7 @@ body {
   height: 49px;
   left: 1304px;
   top: 69px;
+  z-index: 5;
 }
 .head__filter__icon {
   position: absolute;
@@ -367,4 +368,47 @@ body {
   position: absolute;
   left: 538px;
   top: 443px;
+}
+@media only screen and (max-width: 600px) {
+  html {
+    overflow-x: hidden;
+  }
+  .text-shop {
+    font-size: 24px;
+    left: 0px;
+    width: 300px;
+  }
+  .head__text {
+    font-size: 18px;
+    left: 0px;
+  }
+  .hr-fix {
+    width: 100%;
+  }
+  .head__search {
+    width: 252px;
+    height: 44px;
+    left: 100px;
+    top: 70px;
+    font-size: 16px;
+  }
+  .head__search__icon {
+    display: none;
+  }
+  .head__filter__icon {
+    display: none;
+  }
+  .phones {
+    margin-left: 0;
+  }
+  .phones .img-phone {
+    width: 80px;
+    height: 120px;
+  }
+  .phones .phone-name {
+    font-size: 16px;
+  }
+  .phones .price-vnd {
+    font-size: 24px;
+  }
 }

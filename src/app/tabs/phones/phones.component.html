@@ -51,7 +51,9 @@
 
 <hr class="hr-fix" />
 <div class="phones">
-  <div class="grid grid-cols-2 justify-items-start gap-y-24 gap-x-14">
+  <div
+    class="sm:grid sm:grid-cols-2 sm:justify-items-start sm:gap-y-24 sm:gap-x-14"
+  >
     <div *ngFor="let item of phones">
       <a routerLink="/shop/{{ item.id }}"
         ><div class="flex justify-items: center">

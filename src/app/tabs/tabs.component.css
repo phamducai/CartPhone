@@ -145,4 +145,39 @@
   .content .menu .menu__text {
     font-size: 16px;
   }
+  .content .menu .menu__icon--line1 {
+    width: 15px;
+    left: 150px;
+  }
+  .content .menu .menu__icon--line2 {
+    width: 15px;
+    left: 150px;
+  }
+  .content .menu .menu__icon--line3 {
+    width: 15px;
+    left: 150px;
+  }
+  .content .menu {
+    width: 200px;
+  }
+  .content .shop__text {
+    font-size: 16px;
+    left: 60px;
+    top: 73.69px;
+  }
+  .content .cart__text {
+    font-size: 16px;
+    left: 60px;
+    top: 119px;
+  }
+  .content .profile__text {
+    font-size: 16px;
+    left: 60px;
+    top: 180px;
+  }
+  .content .vertical-line {
+    position: absolute;
+    top: 0;
+    left: 189px;
+  }
 }
