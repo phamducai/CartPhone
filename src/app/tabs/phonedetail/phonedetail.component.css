@@ -272,14 +272,11 @@
   height: 61px;
   left: 493px;
   top: 431px;
-
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
-  /* or 111% */
-
   display: flex;
   align-items: center;
 
@@ -376,5 +373,40 @@
     top: 0;
     left: 189px;
     height: 1000px;
+  }
+
+  .main .head__text {
+    font-size: 18px;
+    left: 0px;
+  }
+  .main .text-shop {
+    left: 0px;
+    width: 100px;
+    font-size: 24px;
+  }
+  .main .head__product {
+    font-size: 18px;
+    left: 42px;
+  }
+  .main .head__image {
+    left: 280px;
+  }
+  .main .head__number {
+    left: 319px;
+  }
+  .main .hr-fix {
+    width: 350px;
+  }
+  .main .content__image {
+    width: 300px;
+    height: 360px;
+    left: 32px;
+    top: 171px;
+  }
+  .main .content__title {
+    width: 497px;
+    height: 48px;
+    left: 0px;
+    top: 171px;
   }
 }
