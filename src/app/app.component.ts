@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import {
   Component,
   Injectable,
@@ -19,7 +20,11 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class AppComponent implements OnInit, OnChanges {
-  constructor(private userService: UserService, private login: LoginService) {}
+  constructor(
+    private userService: UserService,
+    private login: LoginService,
+    private router: Router
+  ) {}
   title = 'my-project';
   token: string | null = localStorage.getItem('tokencartphone');
   user: User | undefined;
@@ -27,15 +32,20 @@ export class AppComponent implements OnInit, OnChanges {
   newUser: BehaviorSubject<User> = new BehaviorSubject<User>({});
 
   ngOnInit() {
-    console.log('ngOnInit');
+    console.log('ngOnInit appcomponent');
 
     const token: string | null = localStorage.getItem('tokencartphone');
+    console.log('token: ' + token);
     if (token) {
       this.userService.getdetail(JSON.parse(token)).subscribe((response) => {
-        console.log(response);
-
-        this.user = response.content;
-        this.login.user.next(this.user);
+        if (!response) {
+          this.router.navigate(['/login']);
+        } else {
+          this.user = response.content;
+          this.login.user.next(response.content);
+          console.log(response.content);
+          this.login.image.next(response.content.avatar);
+        }
       });
     }
   }

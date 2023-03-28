@@ -1,101 +1,92 @@
-<div class="backgroundlogin relative">
-  <div class="container mx-auto pt-24">
+<body>
+  <div class="max-w-md mx-auto">
     <div class="flex justify-center">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEt1p1OKnAYP6899nVmSOyOxEdLUbZwkCzMzOuV2ZxJA&s"
-        alt=""
-        class="imagelogo rounded-full"
-      />
+      <div
+        class="w-25 h-25 w- rounded-full bg-white flex justify-center items-center mt-22"
+      >
+        <img
+          src="https://s3-alpha-sig.figma.com/img/b6e8/93c4/d34c78218f2e618bae4d316ce9b46881?Expires=1681084800&Signature=Yv2c95Bg-CvCb49J4aWJIcbWJZq1px819CvRwzL6RyiqtyuPmEeiFAuzgQFs1Y~jipWWKZnIiK-AKZZ8kS9TAZTo7ZtIhzMoyHykw5V8wk0Yal1fZ229Uf852j7-2MucJfXEpB~hpOmBrjtdPT1HlENkM2rX0T9qPDksf8WSMWeKJkbI4x3SjEeyXiagWKMSbpC01~Rv9YcW19~Xt26IzPSvaugolwWGXA2rtMexwSR~k227LrpZoUqlWD-ydzU6Zd0yk~CzWo1w0VHaBU8UQYsiEew9HZqWHh3sRjFjrBXTeD1-GzRRSBFsWCFr-m6-kN~b1BJUYPh-mLkg1jSoTA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+          alt=""
+          class="w-18 h-18"
+        />
+      </div>
     </div>
-
-    <form [formGroup]="loginForm" class="" (ngSubmit)="onSubmit()">
-      <div class="mb-4">
+    <form class="mt-13" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="relative mb-15">
         <input
-          type="email"
+          class="appearance-none border rounded-md w-full text-base leading-tight focus:outline-none focus:shadow-outline text-brand-50 login-input font-normal bg-white"
+          id="username"
+          type="text"
+          placeholder="Tên đăng nhập"
           formControlName="email"
-          class="inputname"
-          placeholder="Email đăng nhập"
         />
         <div
-          *ngIf="
-            loginForm.get('email').invalid && loginForm.get('email').touched
-          "
-          class="text-red-700 text-sm mt-1 texterror"
+          class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
         >
-          Please enter a valid email address.
-        </div>
-        <div class="iconuser rounded-full flex justify-center">
-          <i class="material-icons">person</i>
+          <div class="icon rounded-full flex items-center bg-blue-500">
+            <i class="material-icons text-white border">person</i>
+          </div>
         </div>
       </div>
-      <div class="mb-6">
-        <div class="">
-          <input
-            type="{{ passwordHidden ? 'password' : 'text' }}"
-            formControlName="password"
-            class="inputpassword"
-            placeholder="Mật khẩu"
-          />
-          <div class="iconlockers">
-            <i class="material-icons">lock_outline</i>
+      <div class="relative mb-18">
+        <input
+          class="appearance-none border rounded-md w-full text-white leading-tight focus:outline-none focus:shadow-outline text-brand-50 login-input font-normal bg-white"
+          id="password"
+          type="{{ passwordHidden ? 'password' : 'text' }}"
+          placeholder="Mật khẩu"
+          formControlName="password"
+        />
+        <div
+          class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+        >
+          <div class="rounded-full flex items-center bg-blue-500 icon">
+            <i class="material-icons text-white">lock_outline</i>
           </div>
-          <span
-            (click)="togglePasswordVisibility()"
-            class="mt-3 mr-4 cursor-pointer iconpasswordtoggle"
-          >
-            <div>
-              <i class="material-icons" *ngIf="passwordHidden"
-                >remove_red_eye
-              </i>
-            </div>
-            <div>
-              <i class="material-icons" *ngIf="!passwordHidden"
-                >visibility_off</i
-              >
-            </div>
-          </span>
         </div>
         <div
-          *ngIf="
-            loginForm.get('password').invalid &&
-            loginForm.get('password').touched
-          "
-          class="text-red-700 text-sm mt-1 passworderror"
+          class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+          (click)="togglePasswordVisibility()"
         >
-          Please enter a password with at least 6 characters.
+          <i class="material-icons text-brand-100" *ngIf="passwordHidden"
+            >remove_red_eye</i
+          >
+          <i class="material-icons text-brand-100" *ngIf="!passwordHidden"
+            >visibility_off</i
+          >
         </div>
       </div>
-
-      <div class="blocksave flex">
-        <div class="flex items-center mb-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center mb-23">
           <input
             type="checkbox"
             class="h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300 rounded"
           />
-          <label for="remember-me" class="ml-2 block text-white">
+          <label for="remember-me" class="ml-2 block text-white text-sm">
             Lưu đăng nhập
           </label>
         </div>
 
-        <div class="text-white ml-72">Bạn quên mật khẩu?</div>
+        <a class="text-white text-sm" href="#"> Bạn quên mật khẩu? </a>
       </div>
-      <div class="textlogin">
+      <div class="flex justify-center mb-25">
         <button
-          [disabled]="!loginForm.valid"
+          class="login-button text-base text-white font-normal font-sans border-2"
           type="submit"
-          class="buttondangnhap"
+          [disabled]="!loginForm.valid"
           [ngStyle]="{ opacity: loginForm.valid ? 1 : 0.5 }"
         >
           Đăng nhập
         </button>
       </div>
-    </form>
-    <div class="textbottom">
-      <p class="text-center text-white">
-        Nếu bạn có thắc mắc hay cần giải đáp,vui lòng liên hệ số điện thoại:
-        19001000 <br />
+      <div
+        class="text-xs font-thin text-white w-11/12 mx-auto text-center mb-1"
+      >
+        Nếu bạn có thắc mắc hay cần giải đáp, vui lòng liên hệ số điện thoại:
+        19001000
+      </div>
+      <div class="text-xs font-thin text-white w-11/12 mx-auto text-center">
         Bản quyền thuộc về AnyBim
-      </p>
-    </div>
+      </div>
+    </form>
   </div>
-</div>
+</body>

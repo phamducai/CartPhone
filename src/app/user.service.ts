@@ -24,6 +24,7 @@ export class UserService {
       .pipe(catchError((error) => of(alert(error.error.message))));
   }
   getdetail(token: string): Observable<any> {
+    console.log(token);
     const body = { token };
     return this.http
       .post<any>(this.apiUrl + '/token', body)
@@ -31,9 +32,7 @@ export class UserService {
   }
   uploadAvatar(id: number | undefined, fd: FormData): Observable<any> {
     return this.http.post<any>(this.apiUrl + `/upload/${id}`, fd).pipe(
-      tap((re) => {
-  
-      }),
+      tap((re) => {}),
       catchError((error) => of(null))
     );
   }

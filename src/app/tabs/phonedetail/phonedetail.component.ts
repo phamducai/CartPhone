@@ -15,7 +15,6 @@ export class PhonedetailComponent implements OnInit {
   rate = 0;
   sum = 0;
   phone: Phone | undefined;
-
   constructor(
     private route: ActivatedRoute,
     private phoneService: PhoneService,

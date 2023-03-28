@@ -1,6 +1,11 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
-import { AppComponent } from 'src/app/app.component';
 import { TabsComponent } from '../../tabs/tabs.component';
 import { LoginService } from 'src/app/login.service';
 @Component({
@@ -9,24 +14,35 @@ import { LoginService } from 'src/app/login.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  image: string | undefined;
+  image: string = '';
   constructor(
     public tabsComponent: TabsComponent,
-    private login: LoginService
+    private login: LoginService,
+    private cdRef: ChangeDetectorRef
   ) {}
   ngOnInit(): void {
+    console.log('ngOnInit heading');
+    this.login.image$.subscribe((image) => {
+      this.image = image;
+      this.updateDetectChange();
+      console.log(this.image);
+    });
     this.login.user$.subscribe((user) => {
       this.image = user?.avatar;
+      console.log(this.image);
+      console.log(user);
+      this.updateDetectChange();
     });
-    this.login.image$.subscribe((user) => {
-      this.image = user;
-    });
+    console.log(this.image);
   }
   onClick(): void {
     this.tabsComponent.selectTab(3);
   }
+  updateDetectChange(): void {
+    this.cdRef.detectChanges();
+  }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('user', changes);
+    console.log(changes, 'huhu');
   }
   navigate(): void {}
 }
