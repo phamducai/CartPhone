@@ -1,16 +1,26 @@
-<div class="text-cart">Cart</div>
-<div class="total-item">{{ sum }} items in bags</div>
-<div class="hr-fix"></div>
-<div class="content">
+<div
+  class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
+>
+  Cart
+</div>
+<div
+  class="xl:text-xl text-black font-sans h-15 flex items-center justify-end md:text-base sm:text-sm text-xs border-b border-black"
+>
+  <span class="mr-1"> {{ sum }} items in bags</span>
+</div>
+
+<div class="">
   <div *ngFor="let item of cartphoneService.cartphone">
     <div class="flex items-center">
       <div class="image">
-        <img src="{{ item.image }}" alt="" class="w-full h-full" />
+        <img src="{{ item.image }}" alt="" class="w-47 h-59.75" />
       </div>
 
-      <div class="detail flex flex-col">
-        <h1 class="detail__name">{{ item.name }}</h1>
-        <p class="detail__desc">
+      <div class="flex flex-col">
+        <h1 class="text-black font-sans font-bold text-2xl h-12 w-96">
+          {{ item.name }}
+        </h1>
+        <p class="text">
           {{ item.description }}
         </p>
         <p class="detail__price">
