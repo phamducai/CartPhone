@@ -25,15 +25,12 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.login.image$.subscribe((image) => {
       this.image = image;
       this.updateDetectChange();
-      console.log(this.image);
     });
     this.login.user$.subscribe((user) => {
       this.image = user?.avatar;
       console.log(this.image);
-      console.log(user);
       this.updateDetectChange();
     });
-    console.log(this.image);
   }
   onClick(): void {
     this.tabsComponent.selectTab(3);

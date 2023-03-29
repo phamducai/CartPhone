@@ -1,8 +1,14 @@
-<nav class="w-full">
-  <div class="nav__logo"></div>
-  <div class="nav__text">Mobile Shopping</div>
+<nav class="w-full flex justify-between items-center">
+  <div class="flex items-center">
+    <div class="bg-logo bg-blend-hard-light bg-center bg-cover"></div>
+    <div
+      class="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-black font-sans xl:ml-7 lg:ml-6 md:ml-4"
+    >
+      Mobile Shopping
+    </div>
+  </div>
   <div
-    class="nav__avatar rounded-full"
+    class="avatar rounded-full"
     (click)="onClick()"
     style="
       background-image: url('{{ image }}');
