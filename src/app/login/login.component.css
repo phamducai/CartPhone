@@ -9,9 +9,6 @@ body {
 }
 .login-button {
   background-color: inherit;
-  color: #fff;
-  padding: 16.5px 171px 11.5px 169px;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
