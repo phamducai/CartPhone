@@ -1,104 +1,118 @@
-<div
-  class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
->
-  Shop
-</div>
-<div class="">
-  <div class="">shop</div>
-  <input
-    type="text"
-    class=""
-    placeholder="Search..."
-    #searchBox
-    (input)="searchPhonesByName(searchBox.value)"
-  />
+<div class="w-full">
+  <div
+    class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
+  >
+    Shop
+  </div>
 
-  <img
-    src="https://www.clarin.eu/sites/default/files/styles/medium/public/icon-services-fcs.png?itok=seug9Hqn"
-    class="head__search__icon"
-    alt="icon"
-  />
-  <img
-    src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png"
-    class="head__filter__icon"
-    alt=""
-    (click)="toggleModal()"
-  />
-  <div class="modal-content" *ngIf="showModal">
-    <div class="filter">
-      <div class="filter__header">Filter</div>
-      <p class="filter__price">Giá</p>
-      <p class="filter__from">Từ:</p>
-      <p class="filter__from-price">0 VND</p>
-      <div class="filter__from-icon">
-        <i class="material-icons text-7xl">expand_more</i>
+  <div class="flex justify-between">
+    <div class="head__text">shop</div>
+    <div class="flex items-center">
+      <div class="relative">
+        <input
+          type="text"
+          class="block w-full pl-12 pr-8 py-2 rounded-full border-gray-300 focus:border-indigo-500 focus:outline-none focus:shadow-outline-indigo"
+          placeholder="Tìm kiếm ..."
+          #searchBox
+          (input)="searchPhonesByName(searchBox.value)"
+        />
+        <div
+          class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+        >
+          <img
+            src="https://s3-alpha-sig.figma.com/img/7fe9/1576/1abbe4510ec226768e07ca76d1c2959f?Expires=1681084800&Signature=qCz1cyT3twWrM4XOCDOU9RrwsbKFLurh6TcEia5ZlnpIwDSKqEA-sEACda23-tLR2HfDCEf6JAcxsIdQKLkVtML4WNWQ0XnUw~CbTmJcMJYUCPwrPz~lsfEDLzYu3i6WXke-Gw1DYOQapBIfyXarCosJmQiXTIMGkBhN6ugjjMSmuUnUO7Qk~OOEn9KSP2VS963Hj9jSztg3tm7hTuuMijm9hD6lGuLgd0qs9PoOPOz2I6y~dBW0hANiDM~H1NtQ16sXdXWrukbV43vYpzaJ~dPMyb8U06vIJvBQ1Y84KHj0Hrqoafj-VizO9pBQScdqWe~2aer5oaYfJ3ruM1QuIQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            class="w-4 h-4"
+            alt="icon"
+          />
+        </div>
       </div>
-      <p class="filter__to">Đến:</p>
-      <p class="filter__to-price">10 000 000 VND</p>
-      <div class="filter__to-icon">
-        <i class="material-icons text-7xl">expand_more</i>
-      </div>
-      <p class="filter__rate">Đánh Giá</p>
-      <p class="filter__rate-from">Từ:</p>
-      <p class="filter__rate-from-star">0 Sao</p>
-      <div class="filter__rate-from-icon">
-        <i class="material-icons text-7xl">expand_more</i>
-      </div>
-      <p class="filter__rate-to">Đến:</p>
-      <p class="filter__rate-to-star">5 Sao</p>
-      <div class="filter__rate-to-icon">
-        <i class="material-icons text-7xl">expand_more</i>
+
+      <img
+        src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png"
+        class="w-4 h-4 mr-2"
+        alt=""
+        (click)="toggleModal()"
+      />
+    </div>
+  </div>
+
+  <div class="head">
+    <div class="modal-content" *ngIf="showModal">
+      <div class="filter">
+        <div class="filter__header">Filter</div>
+        <p class="filter__price">Giá</p>
+        <p class="filter__from">Từ:</p>
+        <p class="filter__from-price">0 VND</p>
+        <div class="filter__from-icon">
+          <i class="material-icons text-7xl">expand_more</i>
+        </div>
+        <p class="filter__to">Đến:</p>
+        <p class="filter__to-price">10 000 000 VND</p>
+        <div class="filter__to-icon">
+          <i class="material-icons text-7xl">expand_more</i>
+        </div>
+        <p class="filter__rate">Đánh Giá</p>
+        <p class="filter__rate-from">Từ:</p>
+        <p class="filter__rate-from-star">0 Sao</p>
+        <div class="filter__rate-from-icon">
+          <i class="material-icons text-7xl">expand_more</i>
+        </div>
+        <p class="filter__rate-to">Đến:</p>
+        <p class="filter__rate-to-star">5 Sao</p>
+        <div class="filter__rate-to-icon">
+          <i class="material-icons text-7xl">expand_more</i>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<hr class="hr-fix" />
-<div class="phones">
-  <div
-    class="sm:grid sm:grid-cols-2 sm:justify-items-start sm:gap-y-24 sm:gap-x-14"
-  >
-    <div *ngFor="let item of phones">
-      <a routerLink="/shop/{{ item.id }}"
-        ><div class="flex justify-items: center">
-          <img src="{{ item.image }}" alt="" class="img-phone mr-4" />
-          <div class="flex flex-col justify-around">
-            <h1 class="phone-name">{{ item.name }}</h1>
-            <p class="price-vnd">
-              <span class="mr-4">{{
-                item.price
-                  .toString()
-                  .slice(-9, item.price.toString().length - 6)
-              }}</span>
-              <span class="mr-4">{{
-                item.price
-                  .toString()
-                  .slice(-6, item.price.toString().length - 3)
-              }}</span>
-              <span class="mr-4">{{
-                item.price.toString().slice(-3, item.price.toString().length)
-              }}</span>
-              VND
-            </p>
-            <div class="flex">
-              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-                <svg
-                  class="h-12 w-12 fill-current"
-                  [ngClass]="{
-                    'text-gray-400': item.rate < star,
-                    star: item.rate >= star
-                  }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
-                  />
-                </svg>
-              </ng-container>
-            </div>
-          </div></div
-      ></a>
+  <hr class="hr-fix" />
+  <div class="phones">
+    <div
+      class="sm:grid sm:grid-cols-2 sm:justify-items-start sm:gap-y-24 sm:gap-x-14"
+    >
+      <div *ngFor="let item of phones">
+        <a routerLink="/shop/{{ item.id }}"
+          ><div class="flex justify-items: center">
+            <img src="{{ item.image }}" alt="" class="img-phone mr-4" />
+            <div class="flex flex-col justify-around">
+              <h1 class="phone-name">{{ item.name }}</h1>
+              <p class="price-vnd">
+                <span class="mr-4">{{
+                  item.price
+                    .toString()
+                    .slice(-9, item.price.toString().length - 6)
+                }}</span>
+                <span class="mr-4">{{
+                  item.price
+                    .toString()
+                    .slice(-6, item.price.toString().length - 3)
+                }}</span>
+                <span class="mr-4">{{
+                  item.price.toString().slice(-3, item.price.toString().length)
+                }}</span>
+                VND
+              </p>
+              <div class="flex">
+                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                  <svg
+                    class="h-12 w-12 fill-current"
+                    [ngClass]="{
+                      'text-gray-400': item.rate < star,
+                      star: item.rate >= star
+                    }"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
+                    />
+                  </svg>
+                </ng-container>
+              </div>
+            </div></div
+        ></a>
+      </div>
     </div>
   </div>
 </div>
