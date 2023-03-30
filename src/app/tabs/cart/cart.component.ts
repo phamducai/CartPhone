@@ -9,19 +9,19 @@ import { CartphoneService } from 'src/app/cartphone.service';
 })
 export class CartComponent implements OnInit {
   sum = 0;
+  total = 0;
   payment = 0;
   constructor(public cartphoneService: CartphoneService) {}
   ngOnInit(): void {
-    console.log(this.cartphoneService.cartphone);
     this.calculateSumAndPayment();
   }
 
   onClicks(id: number, step: number): void {
-    const item = _.find(this.cartphoneService.cartphone, { id });
+    const item = _.find(this.cartphoneService.cartPhone, { id });
     if (item) {
       item.quantity += step;
       if (item.quantity === 0) {
-        _.remove(this.cartphoneService.cartphone, (item) => item.id === id);
+        _.remove(this.cartphoneService.cartPhone, (item) => item.id === id);
       }
       this.calculateSumAndPayment();
     }
@@ -32,10 +32,11 @@ export class CartComponent implements OnInit {
     //   this.cartphoneService.cartphone,
     //   (currentValue) => currentValue.quantity
     // );
-    this.sum = _.sumBy(this.cartphoneService.cartphone, 'quantity');
-    // this.sum = this.cartphoneService.cartphone.length;
+    this.sum = _.sumBy(this.cartphoneService.cartPhone, 'quantity');
+    this.total = this.cartphoneService.cartPhone.length;
+    console.log(this.total);
     this.payment = _.sumBy(
-      this.cartphoneService.cartphone,
+      this.cartphoneService.cartPhone,
       (currentValue) => currentValue.quantity * currentValue.price
     );
   }

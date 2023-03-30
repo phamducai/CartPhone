@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { Phone } from 'src/models/phone';
 
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { debounceTime } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',

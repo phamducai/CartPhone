@@ -26,7 +26,7 @@ export class PhonedetailComponent implements OnInit {
     console.log(this.phone);
     this.getPhoneFromRoute();
     this.sum = _.reduce(
-      this.cartphoneService.cartphone,
+      this.cartphoneService.cartPhone,
       (accumulator, currentValue) => {
         return accumulator + currentValue.quantity;
       },
@@ -36,14 +36,14 @@ export class PhonedetailComponent implements OnInit {
 
   onClick(phone: Phone | any): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    let item = _.find(this.cartphoneService.cartphone, { id });
+    let item = _.find(this.cartphoneService.cartPhone, { id });
     if (!item) {
-      this.cartphoneService.cartphone.push({ ...phone, quantity: 1 });
+      this.cartphoneService.cartPhone.push({ ...phone, quantity: 1 });
     } else {
       item.quantity++;
     }
     this.sum = _.reduce(
-      this.cartphoneService.cartphone,
+      this.cartphoneService.cartPhone,
       (accumulator, currentValue) => {
         return accumulator + currentValue.quantity;
       },

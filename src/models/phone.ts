@@ -7,7 +7,7 @@ export interface Phone {
   rate: number;
 }
 
-export interface cartphone extends Phone {
+export interface cartPhone extends Phone {
   quantity: number;
   user_id?: string;
 }

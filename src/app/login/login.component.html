@@ -14,7 +14,7 @@
     <form class="mt-13" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="relative mb-15">
         <input
-          class="appearance-none border rounded-md w-full text-base leading-tight focus:outline-none focus:shadow-outline text-brand-50 login-input font-normal bg-white"
+          class="appearance-none border rounded-md w-full text-base leading-tight focus:outline-none focus:shadow-outline text-custom-bg login-input font-normal bg-white"
           id="username"
           type="text"
           placeholder="Tên đăng nhập"
@@ -30,7 +30,7 @@
       </div>
       <div class="relative mb-18">
         <input
-          class="appearance-none border rounded-md w-full text-white leading-tight focus:outline-none focus:shadow-outline text-brand-50 login-input font-normal bg-white"
+          class="appearance-none border rounded-md w-full leading-tight focus:outline-none focus:shadow-outline text-custom-bg login-input font-normal bg-white"
           id="password"
           type="{{ passwordHidden ? 'password' : 'text' }}"
           placeholder="Mật khẩu"
@@ -47,10 +47,10 @@
           class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
           (click)="togglePasswordVisibility()"
         >
-          <i class="material-icons text-brand-100" *ngIf="passwordHidden"
+          <i class="material-icons text-custom-icon" *ngIf="passwordHidden"
             >remove_red_eye</i
           >
-          <i class="material-icons text-brand-100" *ngIf="!passwordHidden"
+          <i class="material-icons text-custom-icon" *ngIf="!passwordHidden"
             >visibility_off</i
           >
         </div>

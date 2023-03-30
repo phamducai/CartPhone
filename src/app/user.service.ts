@@ -24,7 +24,6 @@ export class UserService {
       .pipe(catchError((error) => of(alert(error.error.message))));
   }
   getdetail(token: string): Observable<any> {
-    console.log(token);
     const body = { token };
     return this.http
       .post<any>(this.apiUrl + '/token', body)

@@ -1,97 +1,98 @@
-<div
-  class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
->
-  Cart
-</div>
-<div
-  class="xl:text-xl text-black font-sans h-15 flex items-center justify-end md:text-base sm:text-sm text-xs border-b border-black"
->
-  <span class="mr-1"> {{ sum }} items in bags</span>
-</div>
-
-<div class="">
-  <div *ngFor="let item of cartphoneService.cartphone">
-    <div class="flex items-center">
-      <div class="image">
-        <img src="{{ item.image }}" alt="" class="w-47 h-59.75" />
-      </div>
-
-      <div class="flex flex-col">
-        <h1 class="text-black font-sans font-bold text-2xl h-12 w-96">
-          {{ item.name }}
-        </h1>
-        <p class="text">
-          {{ item.description }}
-        </p>
-        <p class="detail__price">
-          <span class="mr-2">{{
-            item.price.toString().slice(-9, item.price.toString().length - 6)
-          }}</span>
-          <span class="mr-2">{{
-            item.price.toString().slice(-6, item.price.toString().length - 3)
-          }}</span>
-          <span class="mr-2">{{
-            item.price.toString().slice(-3, item.price.toString().length)
-          }}</span>
-          VND
-        </p>
-      </div>
-      <div class="button">
-        <button class="button__plus" (click)="onClicks(item.id, 1)">+</button>
-        <span class="number"> {{ item?.quantity }}</span>
-        <button class="button__sub" (click)="onClicks(item.id, -1)">-</button>
-      </div>
-    </div>
-    <div class="content__line"></div>
+<div>
+  <div
+    class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
+  >
+    Cart
   </div>
-  <div></div>
+  <div
+    class="xl:text-xl text-black font-sans h-15 flex items-center justify-end md:text-base sm:text-sm text-xs border-b border-custom-border"
+  >
+    <span class="mr-1"> {{ sum }} items in bags</span>
+  </div>
 
-  <div class="flex justify-end" *ngIf="sum > 0">
-    <div class="flex flex-col items-end justify-end">
-      <p class="sub-total">SubToTal</p>
-      <p class="tax">Tax</p>
-      <p class="total">Total</p>
+  <div
+    class="border-b border-custom-border"
+    [ngClass]="{ 'md:overflow-y-scroll md:h-scroll': total >= 2 }"
+  >
+    <div class="xl:ml-11.75 lg:ml-11 md:ml-10 sm:ml-9 ml-8">
+      <div *ngFor="let item of cartphoneService.cartPhone">
+        <div
+          class="md:flex md:items-center"
+          [ngClass]="{ 'border-b border-custom-border': total > 1 }"
+        >
+          <div
+            class="xl:ml-10 lg:ml-6 md:ml-4 sm:ml-2 ml-1 xl:mr-24.25 lg:mr-20 md:mr-12 sm:mr-8 mr-4 xl:mt-7.5 lg:mt5 md:mt-3 sm:mt-1 mt-0 xl:mb-8.5 lg:mb-4 md:mb-3 sm:mb-1 mb-1 xl:w-47 lg:w-44 md:w-42 sm:w-40 w-38 xl:h-59.75 lg:h-58 md:h-54 sm:h-52 h-48 flex items-center justify-center md:block"
+          >
+            <img src="{{ item.image }}" alt="" class="w-full" />
+          </div>
+
+          <div class="flex flex-col">
+            <h1
+              class="text-black font-sans font-bold lg:text-2xl md:text-base sm:text-sm text-xs xl:h-12 lg:h-10 xl:w-96 lg:w-80 md:w-66 sm:w-60 w-56 flex justify-center items-center xl:mb-7.25 lg:mb-6 md:mb-4 sm:mb-2 mb-1"
+            >
+              {{ item.name }}
+            </h1>
+            <p
+              class="text-black xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs font-normal font-sans h-38.75 xl:w-190 md:w-80 lg:w-96"
+            >
+              {{ item.description }}
+            </p>
+            <div
+              class="font-bold xl:text-3xl lg:text-2xl md:text-base sm:text-sm text-xs font-sans h-15 flex items-center"
+            >
+              {{ item.price.toLocaleString("fr", { currency: "VND" }) }} VND
+            </div>
+          </div>
+          <div
+            class="font-normal xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs font-sans text-black flex justify-center items-center"
+          >
+            <button
+              class="lg:w-8 xl:h-14.25 md:w-3 w-6"
+              (click)="onClicks(item.id, 1)"
+            >
+              +
+            </button>
+            <div
+              class="lg:w-8 xl:h-14.25 md:w-3 w-6 flex items-center justify-center"
+            >
+              {{ item?.quantity }}
+            </div>
+            <button
+              class="lg:w-8 xl:h-14.25 md:w-3 w-6"
+              (click)="onClicks(item.id, -1)"
+            >
+              -
+            </button>
+          </div>
+        </div>
+      </div>
+      <div></div>
     </div>
-    <div class="payment">
-      <p class="price-sub-total">
-        {{
-          payment
-            .toLocaleString("vi-VN", {
-              style: "currency",
-              currency: "VND",
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-              useGrouping: true
-            })
-            .replace(".", " ")
-        }}
+  </div>
+  <div
+    class="flex justify-end xl:mr-7.25 lg:mr-6 md:mr-4 sm:mr-2 mr-1 mt-1"
+    *ngIf="sum > 0"
+    [ngClass]="{ 'xl:mt-64 lg:mt-56 md:mt-40 sm:mt-20 mt-8': total == 1 }"
+  >
+    <div
+      class="flex flex-col items-end justify-end font-bold text-black font-sans xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs xl:mr-10 lg:mr-8 md:mr-6 sm:mr-4 mr-2"
+    >
+      <p class="h-10">SubToTal</p>
+      <p class="h-10">Tax</p>
+      <p class="h-10">Total</p>
+    </div>
+    <div
+      class="flex flex-col justify-end items-end font-normal text-black xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs"
+    >
+      <p class="h-10">
+        {{ payment.toLocaleString("fr", { currency: "VND" }) }} VND
       </p>
-      <p class="price-tax">
-        {{
-          (payment * 0.1)
-            .toLocaleString("vi-VN", {
-              style: "currency",
-              currency: "VND",
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-              useGrouping: true
-            })
-            .replace(".", " ")
-        }}
+      <p class="h-10">
+        {{ (payment * 0.1).toLocaleString("fr", { currency: "VND" }) }} VND
       </p>
 
-      <p class="price-total">
-        {{
-          (payment * 1.1)
-            .toLocaleString("vi-VN", {
-              style: "currency",
-              currency: "VND",
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-              useGrouping: true
-            })
-            .replace(".", " ")
-        }}
+      <p class="h-10">
+        {{ (payment * 1.1).toLocaleString("fr", { currency: "VND" }) }} VND
       </p>
     </div>
   </div>
