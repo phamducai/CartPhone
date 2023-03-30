@@ -21,13 +21,10 @@ export class MyprofileComponent implements OnInit {
     private login: LoginService,
     private cdRef: ChangeDetectorRef
   ) {}
-
   user: User | undefined;
-  //default form
   imageUrl: string | undefined;
   selectedSex: string = '';
   formatData: string = '';
-
   ngOnInit(): void {
     this.login.user$.subscribe((user) => {
       this.user = user;
