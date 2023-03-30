@@ -1,27 +1,30 @@
-<div class="w-full">
+<div class="w-full phone">
   <div
     class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
   >
     Shop
   </div>
-
-  <div class="flex justify-between">
-    <div class="head__text">shop</div>
+  <div class="flex justify-between border-black border-b">
+    <div
+      class="xl:text-2.5xl lg:text-2xl md:text-xl sm:text-sm text-xs font-normal ml-7.25"
+    >
+      shop
+    </div>
     <div class="flex items-center">
       <div class="relative">
         <input
           type="text"
-          class="block w-full pl-12 pr-8 py-2 rounded-full border-gray-300 focus:border-indigo-500 focus:outline-none focus:shadow-outline-indigo"
-          placeholder="Tìm kiếm ..."
+          class="block pb-1.25 w-full xl:pl-6 lg:pl-5 md:pl-4 sm:pl-3 pl-2 xl:pr-24 lg:pr-22 md:pr-20 sm:pr-18 pr-16 xl:h-15 lg:h-14 md:h-12 sm:h-10 h-8 border border-black border-solid focus:border-indigo-500 focus:outline-none focus:shadow-outline-indigo xl:text-2.5xl lg:text-2xl md:text-xl sm:text-sm text-xs font-normal"
+          placeholder="Search..."
           #searchBox
           (input)="searchPhonesByName(searchBox.value)"
         />
         <div
-          class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+          class="absolute inset-y-0 right-0 flex items-center pointer-events-none"
         >
           <img
             src="https://s3-alpha-sig.figma.com/img/7fe9/1576/1abbe4510ec226768e07ca76d1c2959f?Expires=1681084800&Signature=qCz1cyT3twWrM4XOCDOU9RrwsbKFLurh6TcEia5ZlnpIwDSKqEA-sEACda23-tLR2HfDCEf6JAcxsIdQKLkVtML4WNWQ0XnUw~CbTmJcMJYUCPwrPz~lsfEDLzYu3i6WXke-Gw1DYOQapBIfyXarCosJmQiXTIMGkBhN6ugjjMSmuUnUO7Qk~OOEn9KSP2VS963Hj9jSztg3tm7hTuuMijm9hD6lGuLgd0qs9PoOPOz2I6y~dBW0hANiDM~H1NtQ16sXdXWrukbV43vYpzaJ~dPMyb8U06vIJvBQ1Y84KHj0Hrqoafj-VizO9pBQScdqWe~2aer5oaYfJ3ruM1QuIQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-            class="w-4 h-4"
+            class="xl:w-12.25 xl:h-12.25 lg:w-11 lg:h-11 md:w-9 md:h-9 sm:h-8 sm:w-8 h-7 w-7"
             alt="icon"
           />
         </div>
@@ -29,90 +32,47 @@
 
       <img
         src="https://www.belram.be/wp-content/uploads/2020/08/iconfinder_filter_1608702.png"
-        class="w-4 h-4 mr-2"
+        class="xl:w-14.5 xl:h-14.0575 lg:w-13 lg:h-13 md:h-11 md:w-11 sm:h-9 sm:w-9 w-7 h-7 mr-1 ml-4.75"
         alt=""
         (click)="toggleModal()"
       />
     </div>
   </div>
 
-  <div class="head">
-    <div class="modal-content" *ngIf="showModal">
-      <div class="filter">
-        <div class="filter__header">Filter</div>
-        <p class="filter__price">Giá</p>
-        <p class="filter__from">Từ:</p>
-        <p class="filter__from-price">0 VND</p>
-        <div class="filter__from-icon">
-          <i class="material-icons text-7xl">expand_more</i>
-        </div>
-        <p class="filter__to">Đến:</p>
-        <p class="filter__to-price">10 000 000 VND</p>
-        <div class="filter__to-icon">
-          <i class="material-icons text-7xl">expand_more</i>
-        </div>
-        <p class="filter__rate">Đánh Giá</p>
-        <p class="filter__rate-from">Từ:</p>
-        <p class="filter__rate-from-star">0 Sao</p>
-        <div class="filter__rate-from-icon">
-          <i class="material-icons text-7xl">expand_more</i>
-        </div>
-        <p class="filter__rate-to">Đến:</p>
-        <p class="filter__rate-to-star">5 Sao</p>
-        <div class="filter__rate-to-icon">
-          <i class="material-icons text-7xl">expand_more</i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="hr-fix" />
-  <div class="phones">
-    <div
-      class="sm:grid sm:grid-cols-2 sm:justify-items-start sm:gap-y-24 sm:gap-x-14"
-    >
-      <div *ngFor="let item of phones">
-        <a routerLink="/shop/{{ item.id }}"
-          ><div class="flex justify-items: center">
-            <img src="{{ item.image }}" alt="" class="img-phone mr-4" />
-            <div class="flex flex-col justify-around">
-              <h1 class="phone-name">{{ item.name }}</h1>
-              <p class="price-vnd">
-                <span class="mr-4">{{
-                  item.price
-                    .toString()
-                    .slice(-9, item.price.toString().length - 6)
-                }}</span>
-                <span class="mr-4">{{
-                  item.price
-                    .toString()
-                    .slice(-6, item.price.toString().length - 3)
-                }}</span>
-                <span class="mr-4">{{
-                  item.price.toString().slice(-3, item.price.toString().length)
-                }}</span>
-                VND
-              </p>
-              <div class="flex">
-                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-                  <svg
-                    class="h-12 w-12 fill-current"
-                    [ngClass]="{
-                      'text-gray-400': item.rate < star,
-                      star: item.rate >= star
-                    }"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
-                    />
-                  </svg>
-                </ng-container>
-              </div>
-            </div></div
-        ></a>
-      </div>
+  <div
+    class="xl:mt-7.5 lg:mt-6 md:mt-5 sm:mt-4 mt-3 xl:ml-6 md:ml-4 sm:ml-3 ml-2 lg:grid lg:grid-cols-2"
+  >
+    <div *ngFor="let item of phones">
+      <a routerLink="/shop/{{ item.id }}"
+        ><div class="flex items-center md:mb-23.5 mb-16">
+          <img
+            src="{{ item.image }}"
+            class="shadow xl:w-31.75 lg:w-28 md:w-26 sm:w-24 w-22 xl:h-43.25 lg:h-41 md:h-40 sm:h-38 h-36 xl:mr-6.25 lg:mr-6 md:mr-5.25 sm:mr-4 mr-3"
+          />
+          <div class="md:flex md:flex-col md:relative">
+            <h1
+              class="font-bold xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs font-sans mb-3.5"
+            >
+              {{ item.name }}
+            </h1>
+            <p
+              class="xl:text-4xl font-sans font-bold lg:text-3xl md:text-2xl sm:text-xl text-base"
+            >
+              {{ item.price.toLocaleString("fr", { currency: "VND" }) }} VND
+            </p>
+            <div class="flex md:absolute md:left-0 md:top-22 xl:w-96 w-60">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                <div *ngIf="item.rate >= star">
+                  <img
+                    src="../../../assets/image/star.png"
+                    alt=""
+                    class="xl:w-full lg:w-11/12 md:w-10/12 sm:w-9/12 w-8/12 h-10 md:h-12 lg:h-14 xl:h-16"
+                  />
+                </div>
+              </ng-container>
+            </div>
+          </div></div
+      ></a>
     </div>
   </div>
 </div>
