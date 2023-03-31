@@ -13,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [AuthGuard],
   },
-  { path: 'test', component: PhonedetailComponent },
+
   { path: 'login', component: LoginComponent },
 ];
 
