@@ -1,103 +1,150 @@
 <app-header> </app-header>
-<div class="relative content">
-  <div class="tab">
-    <div class="menu">
-      <span class="menu__text">Menu</span>
-      <span class="menu__icon">
-        <hr class="menu__icon--line1" />
-        <hr class="menu__icon--line2" />
-        <hr class="menu__icon--line3" />
-      </span>
+<div class="flex w-full">
+  <div class="tab xl:w-60.75 lg:w-56 md:w-52 sm:w-48 w-44 border border-black">
+    <div
+      class="flex items-center justify-between h-15 border-b border-l border-black"
+    >
+      <div class="text-black font-sans xl:text-2xl ml-4.25 md:text-xl text-sm">
+        Menu
+      </div>
+      <div class="flex flex-col justify-between items-center mr-7.5">
+        <div
+          class="xl:w-6 lg:w-5 md:w-4 sm:w-3 w-2 border border-solid border-black"
+        ></div>
+        <div
+          class="xl:w-6 lg:w-5 md:w-4 sm:w-3 w-2 border border-solid border-black xl:my-2 md:my-1.5 sm:my-1 my-0.5"
+        ></div>
+        <div
+          class="xl:w-6 lg:w-5 md:w-4 sm:w-3 w-2 border border-solid border-black"
+        ></div>
+      </div>
     </div>
     <div
       (click)="selectTab(1)"
-      class="shop"
+      class="flex items-center h-15.5"
       [ngClass]="{
-        active: currentTab === 1
+        'text-active-50 border-b border-t border-active-50': currentTab === 1
       }"
     >
-      <span class="shop__icon">
-        <i class="material-icons text-3xl sm:text-5xl">store</i>
-      </span>
-      <span class="shop__text">Shop</span>
+      <div>
+        <i
+          class="material-icons md:text-3xl xl:text-5xl lg:text-4xl sm:text-2xl text-xl ml-4.25"
+          >store</i
+        >
+      </div>
+      <div class="font-sans xl:text-2xl md:text-xl text-sm ml-3.25">Shop</div>
     </div>
     <div
       (click)="selectTab(2)"
-      class="cart"
+      class="flex items-center h-15.5"
       [ngClass]="{
-        active: currentTab === 2
+        'text-active-50 border-b border-t border-active-50': currentTab === 2
       }"
     >
-      <span class="cart__icon"
-        ><i class="material-icons text-3xl sm:text-5xl"
+      <div>
+        <i
+          class="material-icons md:text-3xl xl:text-5xl lg:text-4xl sm:text-2xl text-xl ml-4.25"
           >local_grocery_store</i
-        ></span
-      >
-      <span class="cart__text">Cart</span>
+        >
+      </div>
+      <div class="font-sans xl:text-2xl md:text-xl text-sm ml-3.25">Cart</div>
     </div>
     <div
-      class="profile"
+      class="flex items-center h-15.5"
       (click)="selectTab(3)"
       [ngClass]="{
-        active: currentTab === 3
+        'text-active-50 border-b border-t border-active-50': currentTab === 3
       }"
     >
-      <span class="profile__icon"
-        ><i class="material-icons text-3xl sm:text-5xl">person</i></span
-      >
-      <span class="profile__text">My Profile</span>
+      <div>
+        <i
+          class="material-icons md:text-3xl xl:text-5xl lg:text-4xl sm:text-2xl text-xl ml-4.25"
+          >person</i
+        >
+      </div>
+      <div class="font-sans xl:text-2xl md:text-xl text-sm ml-3.25">
+        My Profile
+      </div>
     </div>
   </div>
-  <hr class="vertical-line" />
-</div>
-<div class="main relative">
-  <div class="text-shop">Shop</div>
-  <div></div>
-  <div class="head">
-    <div class="head__text" (click)="goBack()">shop</div>
-    <div class="head__product">/ Product</div>
-    <div class="head__image"></div>
-    <div class="head__number">{{ sum }}</div>
-    <hr class="hr-fix" />
-  </div>
-  <div class="content__image">
-    <img src="{{ phone?.image }}" alt="phone" class="w-full h-full" />
-  </div>
-  <div class="content__title">{{ phone?.name }}</div>
-  <div class="content__text">{{ phone?.description }}</div>
-  <p class="content__price">
-    {{
-      phone?.price?.toLocaleString("vi-VN", {
-        style: "currency",
-        currency: "VND",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-        useGrouping: true
-      })
-    }}
-  </p>
-  <div class="flex content__star">
-    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-      <svg
-        class="h-12 w-12 fill-current"
-        [ngClass]="{
-          'text-gray-400': true,
-          'text-yellow-300': star > 0 && star < rate
-        }"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-      >
-        <path
-          d="M10 13.856l-4.065 2.285.777-4.535L3.35 8.144l4.54-.66L10 3.75l2.11 4.734 4.54.66-3.362 2.462.776 4.535L10 13.857z"
+  <div class="w-full">
+    <div
+      class="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-sans text-black font-bold ml-4.25 h-15 flex items-center mt-0.75"
+    >
+      Shop
+    </div>
+    <div class="flex justify-between h-15 border-b border-custom-border">
+      <div class="flex text-2.5xl font-sans ml-4">
+        <div class="mr-1.5" (click)="goBack()">Shop</div>
+        <div class="mt-2">/ Product</div>
+      </div>
+
+      <div class="relative mr-2.5">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/ce36/d3d0/9dedaa937941fd09c5856bc305270cb6?Expires=1681084800&Signature=hI8y7MaK04Wex~26PBX3azwfPGftd0VwcZfZ8jTZorvBGG4kcOIy4AaTiZCfJvFBJywYxag9ZtTQbITBEq6UoUAB18Db2q4LPppjSxCEXwS62kdsF~yuG4lFZvwQiWSuBDY-G8yUgExPOLo~uJ7m6O-Jb7fixXNjmEMAjnHa663yRmBaxtIT5JAHh6nY6HeKqTMTtgzlw64n0utmwFT74hQxqHzubT9fUISSnFNqTFl9~wbVXRKMCK8NxBn2LP0gKK491qpSs-wPIh61RBs4UlFqGGliAQoRWLaQie2UoRBYy66bG8B5sVaxT07q0F4K-081GBaYHVxdHYhDuZ9XLQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+          alt=""
+          class="w-10.75 h-10.75"
         />
-      </svg>
-    </ng-container>
+        <div
+          class="absolute top-0 custom z-5 w-6 h-6 bg-custom-sum rounded- text-lg font-normal"
+        >
+          <div class="flex justify-center items-center">{{ sum }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex mt-11 ml-8">
+      <div class="flex flex-col items-center">
+        <div>
+          <img src="{{ phone?.image }}" alt="phone" class="w-102 h-119.5" />
+        </div>
+        <div class="mt-9">
+          <img
+            src="https://s3-alpha-sig.figma.com/img/fe1f/c85d/beecf0aa808961fe7cad2de058c0fce2?Expires=1681084800&Signature=GaIcQq6hjCjRWoNqmCqoH4h~i7QxSFxUg44gc7Ap73mJdtj9c8PedqIgWnsDN-0JxQ5sKIL2zlF3GanQgVjIYOWCJl8PD0~EyVMdNZ5rB2--E5DaPSHEQ0zeniarEbcLnDZxW95Mpn3cQcPSv5HKsE8nLMacpZ61nNma85bmqjHiziQK2aTiRoRQmwFXilDzXMA~BYsHwv-bNMiMzZIXa0CyzRqH9p83eLu4xci3ctFwwXUZk~9lB9-9Y3M4HfmgwvFZnhI~haKAvyp-QAb1eHkXOuoSAXCtXd2f8J4dh2Rur3ErJEOZiSFfi26~SBSUNdlTlqtlwpyDz0H6MWxIkA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            alt=""
+            class="w-49.5 h-26.75"
+          />
+        </div>
+      </div>
+      <div class="w-191">
+        <div
+          class="text-2xl font-sans h-12 font-bold text-black flex items-center"
+        >
+          {{ phone?.name }}
+        </div>
+        <div class="font-sans text-2xl h-38.75 text-black my-7">
+          {{ phone?.description }}
+        </div>
+        <p class="font-bold text-4xl text-black h-15.25 flex items-center">
+          {{ phone?.price?.toLocaleString("fr", { currency: "VND" }) }} VND
+        </p>
+        <div class="flex xl:w-96 w-60">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+            <div *ngIf="rate >= star">
+              <img
+                src="../../../assets/image/star.png"
+                alt=""
+                class="xl:w-full lg:w-11/12 md:w-10/12 sm:w-9/12 w-8/12 h-10 md:h-12 lg:h-14 xl:h-16"
+              />
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="flex mt-7.5">
+          <button
+            (click)="onClick(phone); selectTab(2)"
+            class="w-91 h-25.75 bg-custom-btn-primary rounded-0.5xl font-sans font-bold text-4xl text-custom-btn-text mr-10"
+          >
+            Mua Ngay
+          </button>
+          <button
+            (click)="onClick(phone)"
+            class="w-89.5 h-25.75 bg-custom-btn-success rounded-0.5xl font-sans font-bold text-4xl text-custom-btn-text"
+          >
+            Thêm vào giỏ hảng
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-  <button class="button button--primary" (click)="onClick(phone); selectTab(2)">
-    <span class="button__buy">Mua Ngay</span>
-  </button>
-  <button class="button button--success" (click)="onClick(phone)">
-    <span class="button__add">Thêm vào giỏ hảng</span>
-  </button>
-  <div class="content__img"></div>
 </div>
