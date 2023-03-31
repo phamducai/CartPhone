@@ -74,7 +74,9 @@
       Shop
     </div>
     <div class="flex justify-between h-15 border-b border-custom-border">
-      <div class="flex text-2.5xl font-sans ml-4">
+      <div
+        class="flex font-sans ml-2 md:ml-4 xl:text-2.5xl lg:text-xl md:text-base sm:text-base text-sm"
+      >
         <div class="mr-1.5" (click)="goBack()">Shop</div>
         <div class="mt-2">/ Product</div>
       </div>
@@ -86,36 +88,46 @@
           class="w-10.75 h-10.75"
         />
         <div
-          class="absolute top-0 custom z-5 w-6 h-6 bg-custom-sum rounded- text-lg font-normal"
+          class="absolute top-0 custom z-5 w-6 h-6 bg-custom-sum rounded-full xl:text-lg font-normal lg:text-base md:text-sm text-xs"
         >
           <div class="flex justify-center items-center">{{ sum }}</div>
         </div>
       </div>
     </div>
 
-    <div class="flex mt-11 ml-8">
+    <div
+      class="md:flex xl:mt-11 lg:mt-9 md:mt-7 sm:mt-5 mt-3 xl:ml-8 lg:ml-6 md:ml-5 sm:ml-3 ml-2"
+    >
       <div class="flex flex-col items-center">
         <div>
-          <img src="{{ phone?.image }}" alt="phone" class="w-102 h-119.5" />
+          <img
+            src="{{ phone?.image }}"
+            alt="phone"
+            class="xl:w-102 lg:w-96 md:w-80 sm:w-72 w-64 xl:h-119.5 lg:h-96 md:h-80 sm:h-72 h-64"
+          />
         </div>
-        <div class="mt-9">
+        <div class="xl:mt-9 lg:mt-7 md:mt-6 sm:mt-4 mt-3">
           <img
             src="https://s3-alpha-sig.figma.com/img/fe1f/c85d/beecf0aa808961fe7cad2de058c0fce2?Expires=1681084800&Signature=GaIcQq6hjCjRWoNqmCqoH4h~i7QxSFxUg44gc7Ap73mJdtj9c8PedqIgWnsDN-0JxQ5sKIL2zlF3GanQgVjIYOWCJl8PD0~EyVMdNZ5rB2--E5DaPSHEQ0zeniarEbcLnDZxW95Mpn3cQcPSv5HKsE8nLMacpZ61nNma85bmqjHiziQK2aTiRoRQmwFXilDzXMA~BYsHwv-bNMiMzZIXa0CyzRqH9p83eLu4xci3ctFwwXUZk~9lB9-9Y3M4HfmgwvFZnhI~haKAvyp-QAb1eHkXOuoSAXCtXd2f8J4dh2Rur3ErJEOZiSFfi26~SBSUNdlTlqtlwpyDz0H6MWxIkA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
             alt=""
-            class="w-49.5 h-26.75"
+            class="xl:w-49.5 lg:w-44 md:w-40 sm:w-36 w-32 xl:h-26.75 lg:h-24 md:h-22 sm:h-20 h-18"
           />
         </div>
       </div>
-      <div class="w-191">
+      <div class="xl:w-191 lg:w-190 md:w-96 w-80">
         <div
-          class="text-2xl font-sans h-12 font-bold text-black flex items-center"
+          class="xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm font-sans xl:h-12 lg:h-10 sm:h-8 h-6 font-bold text-black flex items-center"
         >
           {{ phone?.name }}
         </div>
-        <div class="font-sans text-2xl h-38.75 text-black my-7">
+        <div
+          class="font-sans xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm h-38.75 text-black xl:my-7 lg:my-6 md:my-5 sm:my-2 my-1"
+        >
           {{ phone?.description }}
         </div>
-        <p class="font-bold text-4xl text-black h-15.25 flex items-center">
+        <p
+          class="font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base text-black xl:h-15.25 lg:h-14 md:h-12 sm:h-10 h-8 flex items-center"
+        >
           {{ phone?.price?.toLocaleString("fr", { currency: "VND" }) }} VND
         </p>
         <div class="flex xl:w-96 w-60">
@@ -130,16 +142,16 @@
           </ng-container>
         </div>
 
-        <div class="flex mt-7.5">
+        <div class="flex xl:mt-7.5 lg:mt-6 md:mt-4.5 sm:mt-3 mt-2">
           <button
             (click)="onClick(phone); selectTab(2)"
-            class="w-91 h-25.75 bg-custom-btn-primary rounded-0.5xl font-sans font-bold text-4xl text-custom-btn-text mr-10"
+            class="xl:w-91 lg:w-80 md:w-72 sm:w-64 w-60 xl:h-25.75 lg:h-22 md:h-20 sm:h-18 h-16 bg-custom-btn-primary rounded-0.5xl font-sans font-bold xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-custom-btn-text mr-10"
           >
             Mua Ngay
           </button>
           <button
             (click)="onClick(phone)"
-            class="w-89.5 h-25.75 bg-custom-btn-success rounded-0.5xl font-sans font-bold text-4xl text-custom-btn-text"
+            class="xl:w-89.5 lg:w-80 md:w-72 sm:w-64 w-60 xl:h-25.75 lg:h-22 md:h-20 sm:h-18 h-16 bg-custom-btn-success rounded-0.5xl font-sans font-bold xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-custom-btn-text"
           >
             Thêm vào giỏ hảng
           </button>

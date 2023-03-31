@@ -3,8 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,ts,tsx}"],
   theme: {
     extend: {
+      borderRadius: { "0.5xl": "10px" },
       spacing: {
         22: "5.5rem",
+        2.001: "-0.5rem",
       },
       width: {
         0.25: "1px",
@@ -18,6 +20,7 @@ module.exports = {
         14.5: "3.625rem",
         12.25: "3.0625rem",
         13: "3.25rem",
+        10.75: "2.6875rem",
         31.75: "7.9375rem",
         43.25: "10.8125rem",
         46.5: "11.625rem",
@@ -35,6 +38,11 @@ module.exports = {
         92: "20.5rem",
         81: "18rem",
         70: "13rem",
+        102: "25.5rem",
+        49.5: "12.375rem",
+        91: "23rem",
+        191: "47.5rem",
+        89.5: "22.375rem",
       },
       height: {
         0.25: "1px",
@@ -62,6 +70,11 @@ module.exports = {
         47.5: "11.875rem",
         42: "10.5rem",
         scroll: "60.5vh",
+        10.75: "2.6875rem",
+        119.5: "29.875rem",
+        15.25: "3.8125rem",
+        26.75: "6.6875rem",
+        25.75: "6.4375rem",
       },
       margin: {
         0.75: "0.1875rem",
@@ -87,6 +100,8 @@ module.exports = {
         24.25: "6.0625rem",
         25: "5.75rem",
         26.5: "6.625rem",
+        10.5: "2.625rem",
+        7.5: "1.875rem",
       },
       padding: {
         1.25: "0.3125rem",
@@ -102,6 +117,10 @@ module.exports = {
           bg: "#A5A4A4",
           icon: "#666666;",
           border: "#ADADAD",
+          sum: "#F477FF",
+          "btn-primary": "#00C2FF",
+          "btn-success": "#00FF19",
+          "btn-text": "#FFFDFD",
         },
         active: {
           50: "#0feaf8",
@@ -109,6 +128,8 @@ module.exports = {
       },
       backgroundImage: {
         logo: "url('https://s3-alpha-sig.figma.com/img/b6e8/93c4/d34c78218f2e618bae4d316ce9b46881?Expires=1681084800&Signature=Yv2c95Bg-CvCb49J4aWJIcbWJZq1px819CvRwzL6RyiqtyuPmEeiFAuzgQFs1Y~jipWWKZnIiK-AKZZ8kS9TAZTo7ZtIhzMoyHykw5V8wk0Yal1fZ229Uf852j7-2MucJfXEpB~hpOmBrjtdPT1HlENkM2rX0T9qPDksf8WSMWeKJkbI4x3SjEeyXiagWKMSbpC01~Rv9YcW19~Xt26IzPSvaugolwWGXA2rtMexwSR~k227LrpZoUqlWD-ydzU6Zd0yk~CzWo1w0VHaBU8UQYsiEew9HZqWHh3sRjFjrBXTeD1-GzRRSBFsWCFr-m6-kN~b1BJUYPh-mLkg1jSoTA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')",
+        "icon-cart":
+          "url('https://s3-alpha-sig.figma.com/img/ce36/d3d0/9dedaa937941fd09c5856bc305270cb6?Expires=1681084800&Signature=hI8y7MaK04Wex~26PBX3azwfPGftd0VwcZfZ8jTZorvBGG4kcOIy4AaTiZCfJvFBJywYxag9ZtTQbITBEq6UoUAB18Db2q4LPppjSxCEXwS62kdsF~yuG4lFZvwQiWSuBDY-G8yUgExPOLo~uJ7m6O-Jb7fixXNjmEMAjnHa663yRmBaxtIT5JAHh6nY6HeKqTMTtgzlw64n0utmwFT74hQxqHzubT9fUISSnFNqTFl9~wbVXRKMCK8NxBn2LP0gKK491qpSs-wPIh61RBs4UlFqGGliAQoRWLaQie2UoRBYy66bG8B5sVaxT07q0F4K-081GBaYHVxdHYhDuZ9XLQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')",
       },
       fontSize: {
         "2.5xl": "1.75rem",
