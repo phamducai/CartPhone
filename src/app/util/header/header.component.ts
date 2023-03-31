@@ -41,5 +41,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes, 'huhu');
   }
-  navigate(): void {}
+  navigate(): void {
+    console.log('haha');
+  }
 }
