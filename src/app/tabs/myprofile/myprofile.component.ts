@@ -9,6 +9,7 @@ import { AppComponent } from '../../app.component';
 import { UserService } from '../../user.service';
 import * as dayjs from 'dayjs';
 import { LoginService } from '../../login.service';
+import { IdService } from 'src/app/id.service';
 
 @Component({
   selector: 'app-myprofile',
@@ -25,6 +26,7 @@ export class MyprofileComponent implements OnInit {
   imageUrl: string | undefined;
   selectedSex: string = '';
   formatData: string = '';
+
   ngOnInit(): void {
     this.login.user$.subscribe((user) => {
       this.user = user;

@@ -44,8 +44,8 @@
       class="xl:mt-7.5 lg:mt-6 md:mt-5 sm:mt-4 mt-3 xl:ml-6 md:ml-4 sm:ml-3 ml-2 lg:grid lg:grid-cols-2"
     >
       <div *ngFor="let item of phones">
-        <a routerLink="/shop/{{ item.id }}"
-          ><div class="flex items-center md:mb-23.5 mb-16">
+        <div (click)="Phonedetal(item.id)">
+          <div class="flex items-center md:mb-23.5 mb-16">
             <img
               src="{{ item.image }}"
               class="shadow xl:w-31.75 lg:w-28 md:w-26 sm:w-24 w-22 xl:h-43.25 lg:h-41 md:h-40 sm:h-38 h-36 xl:mr-6.25 lg:mr-6 md:mr-5.25 sm:mr-4 mr-3"
@@ -72,8 +72,9 @@
                   </div>
                 </ng-container>
               </div>
-            </div></div
-        ></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

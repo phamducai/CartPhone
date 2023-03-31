@@ -24,7 +24,8 @@
       (click)="selectTab(1)"
       class="flex items-center h-15.5"
       [ngClass]="{
-        'text-active-50 border-b border-t border-active-50': currentTab === 1
+        'text-active-50 border-b border-t border-active-50':
+          currentTab === 1 || currentTab === 4
       }"
     >
       <div>
@@ -77,6 +78,9 @@
     </ng-container>
     <ng-container *ngIf="currentTab === 3">
       <app-myprofile></app-myprofile>
+    </ng-container>
+    <ng-container *ngIf="currentTab === 4">
+      <app-phonedetail></app-phonedetail>
     </ng-container>
   </div>
 </div>

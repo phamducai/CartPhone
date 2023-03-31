@@ -22,7 +22,7 @@ export class PhoneService {
       catchError((error) => of([]))
     );
   }
-  getPhonebyId(id: string | null): Observable<Phone | any> {
+  getPhonebyId(id: number | null): Observable<Phone | any> {
     return this.http.get<Phone>(this.apiUrl + `/${id}`).pipe(
       tap((receivedMovie: any) => {
         return receivedMovie.content;

@@ -21,14 +21,12 @@ export class HeaderComponent implements OnInit, OnChanges {
     private cdRef: ChangeDetectorRef
   ) {}
   ngOnInit(): void {
-    console.log('ngOnInit heading');
     this.login.image$.subscribe((image) => {
       this.image = image;
       this.updateDetectChange();
     });
     this.login.user$.subscribe((user) => {
       this.image = user?.avatar;
-      console.log(this.image);
       this.updateDetectChange();
     });
   }

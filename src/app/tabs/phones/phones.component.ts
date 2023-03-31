@@ -1,7 +1,10 @@
+import { IdService } from './../../id.service';
 import { Component, OnInit } from '@angular/core';
 import { Phone } from 'src/models/phone';
 import { PhoneService } from 'src/app/phone.service';
 import { Subject } from 'rxjs';
+import { TabsComponent } from '../tabs.component';
+
 @Component({
   selector: 'app-phones',
   templateUrl: './phones.component.html',
@@ -13,7 +16,11 @@ export class PhonesComponent implements OnInit {
   toggleModal() {
     this.showModal = !this.showModal;
   }
-  constructor(private phoneService: PhoneService) {}
+  constructor(
+    private phoneService: PhoneService,
+    private idService: IdService,
+    private tabsComponent: TabsComponent
+  ) {}
   selectedPhone: Phone | undefined;
   onSelect(phone: Phone): void {
     this.selectedPhone = phone;
@@ -34,6 +41,10 @@ export class PhonesComponent implements OnInit {
   }
   search(name: string): void {
     this.searchSubject.next(name);
+  }
+  Phonedetal(id: number) {
+    this.idService.setId(id);
+    this.tabsComponent.selectTab(4);
   }
   ngOnInit() {
     this.getMPhonesFromServices();
