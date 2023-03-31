@@ -26,7 +26,10 @@ export class CartComponent implements OnInit {
       this.calculateSumAndPayment();
     }
   }
-
+  deleteItem(id: number) {
+    _.remove(this.cartphoneService.cartPhone, { id: id });
+    this.calculateSumAndPayment();
+  }
   private calculateSumAndPayment(): void {
     // this.sum = _.sumBy(
     //   this.cartphoneService.cartphone,

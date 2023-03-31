@@ -17,7 +17,7 @@
     <div class="xl:ml-11.75 lg:ml-11 md:ml-10 sm:ml-9 ml-8">
       <div *ngFor="let item of cartphoneService.cartPhone">
         <div
-          class="md:flex md:items-center"
+          class="md:flex md:items-center relative"
           [ngClass]="{ 'border-b border-custom-border': total > 1 }"
         >
           <div
@@ -25,7 +25,12 @@
           >
             <img src="{{ item.image }}" alt="" class="w-full" />
           </div>
-
+          <div
+            class="absolute custom-delete right-0"
+            (click)="deleteItem(item.id)"
+          >
+            x
+          </div>
           <div class="flex flex-col">
             <h1
               class="text-black font-sans font-bold lg:text-2xl md:text-base sm:text-sm text-xs xl:h-12 lg:h-10 xl:w-96 lg:w-80 md:w-66 sm:w-60 w-56 flex justify-center items-center xl:mb-7.25 lg:mb-6 md:mb-4 sm:mb-2 mb-1"
