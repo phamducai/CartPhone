@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { PhoneService } from 'src/app/phone.service';
 import { Phone } from 'src/models/phone';
 import * as _ from 'lodash';
@@ -23,20 +22,12 @@ export class PhonedetailComponent implements OnInit {
     public tabsComponent: TabsComponent,
     private idService: IdService
   ) {}
-
   ngOnInit(): void {
     this.idService.id$.subscribe((id) => (this.id = id));
     console.log(this.id);
     this.getPhoneFromRoute();
-    this.sum = _.reduce(
-      this.cartphoneService.cartPhone,
-      (accumulator, currentValue) => {
-        return accumulator + currentValue.quantity;
-      },
-      0
-    );
+    this.sum = this.cartphoneService.cartPhone.length;
   }
-
   onClick(phone: Phone | any): void {
     const id = this.id;
     let item = _.find(this.cartphoneService.cartPhone, { id });
@@ -45,16 +36,14 @@ export class PhonedetailComponent implements OnInit {
     } else {
       item.quantity++;
     }
-    this.sum = _.reduce(
-      this.cartphoneService.cartPhone,
-      (accumulator, currentValue) => {
-        return accumulator + currentValue.quantity;
-      },
-      0
-    );
-  }
-  goBack(): void {
-    history.back();
+    // this.sum = _.reduce(
+    //   this.cartphoneService.cartPhone,
+    //   (accumulator, currentValue) => {
+    //     return accumulator + currentValue.quantity;
+    //   },
+    //   0
+    // );
+    this.sum = this.cartphoneService.cartPhone.length;
   }
   getPhoneFromRoute(): void {
     const id = this.id;

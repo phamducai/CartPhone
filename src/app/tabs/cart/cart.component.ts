@@ -35,9 +35,9 @@ export class CartComponent implements OnInit {
     //   this.cartphoneService.cartphone,
     //   (currentValue) => currentValue.quantity
     // );
-    this.sum = _.sumBy(this.cartphoneService.cartPhone, 'quantity');
-    this.total = this.cartphoneService.cartPhone.length;
-    console.log(this.total);
+    // this.sum = _.sumBy(this.cartphoneService.cartPhone, 'quantity');
+    this.sum = this.cartphoneService.cartPhone.length;
+
     this.payment = _.sumBy(
       this.cartphoneService.cartPhone,
       (currentValue) => currentValue.quantity * currentValue.price
